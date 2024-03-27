@@ -1,0 +1,70 @@
+.btn-wrp{
+  display: flex;
+  justify-content: center;
+}
+
+.button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 14px;
+  background-color: @mainBtn;
+  font-weight: 700;
+
+  width: 280px;
+  height: 45px;
+
+  padding: 5px;
+  border-radius: 0;
+  text-transform: none;
+
+  line-height: 1.5;
+  color: @mainBtnColor;
+  text-align: center;
+  border: 0;
+
+
+  cursor: pointer;
+
+  transition: .3s all;
+
+  &:hover,
+  &:focus,
+  &:active{
+    box-shadow: none;
+    background-color: @mainBtnHover;
+    border-color: @mainBtnHover;
+    color: @mainBtnColor;
+  }
+
+  &--w100{
+    width: 100%;
+  }
+
+  &--login{
+    background-color: #dfdfdf;
+    color: @text;
+
+    &:hover{
+      background-color: #ccc;
+      color: @text;
+    }
+  }
+
+  &--w140{
+    width: 140px;
+  }
+
+  &--black{
+    color: @blackBtnColor;
+    background-color: @blackBtn;
+    border: 1px solid #000;
+
+    &:hover{
+      color: @blackBtnHoverColor;
+      background-color: @blackBtnHover;
+      border: 1px solid #000;
+    }
+  }
+}

@@ -1,0 +1,109 @@
+.feedbacks {
+  padding: 120px 0 100px;
+
+  &__flex{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__btn-wrp{
+    padding-top: 30px;
+  }
+}
+
+.feedback{
+  width: 310px;
+  position: relative;
+  padding-top: 20px;
+  margin-bottom: 20px;
+
+  &__time{
+    font-size: 12px;
+    line-height: 12px;
+    color: #adadad;
+  }
+
+  &__autor,
+  &__subject{
+    color: @title;
+    font-weight: 700;
+    line-height: 1.51;
+  }
+
+  .regular-text{
+    font-weight: 400;
+    color: #6d6d6d;
+  }
+
+  &__text{
+    font-size: 12px;
+    margin-top: 15px;
+    line-height: 1.5;
+    color: @title;
+    margin-bottom: 18px;
+  }
+
+  &__footer{
+    display: flex;
+    line-height: 1.83;
+  }
+
+  &__rating{
+    margin-right: 10px;
+    margin-top: -1px;
+  }
+
+}
+
+@media screen and (max-width: 991px){
+
+  .feedbacks{
+    padding: 90px 0 40px;
+  }
+}
+
+
+@media screen and (max-width: 767px){
+
+  .feedbacks{
+
+    &__flex{
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    &__btn-wrp{
+      padding-top: 40px;
+    }
+  }
+
+  .feedback{
+    padding-top: 0;
+
+    &:nth-child(n){
+      border-top: 0;
+    }
+  }
+}
+
+//if slider initialized
+
+.feedbacks__flex{
+
+  &.slick-initialized {
+    max-width: 310px;
+    margin: 0 auto;
+
+    .feedback{
+      margin: 0 5px;
+      padding-bottom: 0;
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .slick-dots{
+      margin-top: 40px;
+    }
+  }
+}
