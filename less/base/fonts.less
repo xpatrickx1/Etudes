@@ -1,9 +1,20 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,900&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto:700,900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@font-face { 
+  font-family: BerlinTypeOffice-Regular; 
+  // src: url(http://localhost:8080/sfera/wp-content/themes/Sfera/fonts/BerlinTypeOffice-Regular.ttf); 
+  src: url(fonts/BerlinTypeOffice-Regular.ttf); 
+  font-weight: normal; 
+}
 
-@fontFamily : 'Poppins', sans-serif;
+@font-face { 
+  font-family: BerlinTypeOffice-Bold; 
+  // src: url(http://localhost:8080/sfera/wp-content/themes/Sfera/fonts/BerlinTypeOffice-Bold.ttf); 
+  src: url(fonts/BerlinTypeOffice-Bold.ttf); 
+  font-weight: normal; 
+}
+
+@fontFamily : 'BerlinTypeOffice', sans-serif;
 
 .fontSize( @size, @lineHeight ) {
     font-size: @size;
