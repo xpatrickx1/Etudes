@@ -293,24 +293,32 @@ function get_ajax_posts() {
     $response = '';
 
     // The Query
-    if ( $ajaxposts->have_posts() ) {
-        while ( $ajaxposts->have_posts() ) {
-            $ajaxposts->the_post();
-            $response .= get_template_part('./includes/sections/page-blog/blog-list.php');
-        }
-    } else {
-        $response .= get_template_part('none');
-    }
+    $args = array(
+        'cat' => 60,
+        'post__not_in' => [get_the_ID()],
+    );
+    
+    $second_query = new WP_Query($args);
 
-    echo $response;
+    echo $second_query;
+
+    echo '<div class="gov">no</div>';
 
     exit; // leave ajax call
 }
 
-// Fire AJAX action for both logged in and non-logged in users
-add_action('wp_ajax_get_ajax_posts', 'get_ajax_posts');
-add_action('wp_ajax_nopriv_get_ajax_posts', 'get_ajax_posts');
 
+add_action( 'wp_ajax_misha', 'truemisha_ajax' ); // wp_ajax_{ЗНАЧЕНИЕ ПАРАМЕТРА ACTION!!}
+add_action( 'wp_ajax_nopriv_misha', 'truemisha_ajax' );  // wp_ajax_nopriv_{ЗНАЧЕНИЕ ACTION!!}
+// первый хук для авторизованных, второй для не авторизованных пользователей
+ 
+function truemisha_ajax(){
+ 
+	$summa = $_POST[ 'param1' ] + $_POST[ 'param2' ];
+	echo $summa;
+ 
+	die; // даём понять, что обработчик закончил выполнение
+}
 
 /* Functions for processing custom fields */
 function get_custom_field($field, $format = '', $date_format = 'F j, Y')

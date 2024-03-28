@@ -6,13 +6,57 @@ $(document).ready(() => {
     let isAnimating = false,
         newLocation = '',
         firstLoad = false;
+
+    jQuery( function( $ ){ // есть разные варианты этой строчки, но такая мне нравится больше всего, т.к. всегда работает
+        $( '.header__logo' ).click( function(){ // при клике на элемент с id="misha_button" 
+            alert( 'Если это работает, уже неплохо' ); // выводим сообщение
+        });
+    });
+
+    // jQuery( function( $ ){
+    //     $( '.header__logo' ).click(function(){
+    //         $.ajax({
+    //             url: 'http://localhost:8888/sfera/wp-content/themes/Sfera/myajax.php',
+    //             type: 'POST',
+    //             data: 'param1=2&param2=3', // можно также передать в виде объекта
+    //             beforeSend: function( xhr ) {
+    //                 $( '.header__logo' ).text( 'Загрузка, 5 сек...' );	
+    //             },
+    //             success: function( data ) {
+    //                 $( '.header__logo' ).text( 'Отправить' );	
+    //                 alert( data );
+    //             }
+    //         });
+    //         // если элемент – ссылка, то не забываем:
+    //         // return false;
+    //     });
+    // });
+
+    jQuery(function($){
+        $('.header__logo').click(function(){
+            $.ajax({
+                url: '<?php echo admin_url( "admin-ajax.php" ) ?>',
+                type: 'POST',
+                data: 'action=misha&param1=2&param2=3', // можно также передать в виде массива или объекта
+                beforeSend: function( xhr ) {
+                    $('.header__logo').text('Загрузка, 5 сек...');	
+                },
+                success: function( data ) {
+                    $('.header__logo').text('Отправить');	
+                    alert( data );
+                }
+            });
+            // если элемент – ссылка, то не забываем:
+            // return false;
+        });
+    });
     
     //trigger smooth transition from the actual page to the new one 
-    $('.header a').on('click', function(event){
+    $('.navigation a').on('click', function(event){
         event.preventDefault();
         $.ajax({
             type: 'POST',
-            url: 'wp-admin/admin-ajax.php',
+            url: '../../../../wp-admin/admin-ajax.php',
             dataType: 'html', // add data type
             data: { action : 'get_ajax_posts' },
             success: function( response ) {

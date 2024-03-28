@@ -11,20 +11,20 @@
               <div class="item__info info">
                 
                 <div class="info__col">
-                  <span class="info__key">Format</span><?php custom_field('format'); ?>
+                  <span class="info__key"><?= get_bloginfo("language") == 'en' ? 'Format' : 'Формат' ?></span><?php custom_field('format'); ?>
                 </div>
                 <div class="info__col">
-                  <span class="info__key">Genre</span> <?php custom_field('genre'); ?>
+                  <span class="info__key"><?= get_bloginfo("language") == 'en' ? 'Genre' : 'Жанр' ?></span> <?php custom_field('genre'); ?>
                 </div>
                 <div class="info__col">
-                  <span class="info__key">Year</span> <?php custom_field('year'); ?>
+                  <span class="info__key"><?= get_bloginfo("language") == 'en' ? 'Year' : 'Рік' ?></span> <?php custom_field('year'); ?>
                 </div>
                 
               </div>
             </div>
 
             <div class="item--right">
-              <h2>
+              <h2>  
                 <a href="<?php the_permalink(); ?>" class="item__title"><?php the_title(); ?></a>
               </h2>
             </div>
