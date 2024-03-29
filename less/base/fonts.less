@@ -2,19 +2,18 @@
 
 @font-face { 
   font-family: BerlinTypeOffice-Regular; 
-  // src: url(http://localhost:8080/sfera/wp-content/themes/Sfera/fonts/BerlinTypeOffice-Regular.ttf); 
-  src: url(fonts/BerlinTypeOffice-Regular.ttf); 
+  src: url(./../fonts/BerlinTypeOffice-Regular.ttf); 
   font-weight: normal; 
 }
 
 @font-face { 
   font-family: BerlinTypeOffice-Bold; 
-  // src: url(http://localhost:8080/sfera/wp-content/themes/Sfera/fonts/BerlinTypeOffice-Bold.ttf); 
-  src: url(fonts/BerlinTypeOffice-Bold.ttf); 
+  src: url(./../fonts/BerlinTypeOffice-Bold.ttf); 
   font-weight: normal; 
 }
 
-@fontFamily : 'BerlinTypeOffice', sans-serif;
+@fontFamily : 'BerlinTypeOffice-Regular', sans-serif;
+@fontBold : 'BerlinTypeOffice-Bold', sans-serif;
 
 .fontSize( @size, @lineHeight ) {
     font-size: @size;

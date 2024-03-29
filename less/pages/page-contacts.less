@@ -4,20 +4,203 @@
 
 
 .testfont {
-    font-family: BerlinTypeOffice-Bold;
     color: white;
     font-size: 150px;
+    font-family: @fontBold;
 }
 
-.emails__title {
-    .fontSize(21px, 29px);
-    letter-spacing: 0.01em;
-    opacity: .5;
+
+.contacts {
     color: @white;
-}
-.emails__email {
-    .fontSize(21px, 29px);
-    .font(700);
     letter-spacing: 0.01em;
-    color: @white;
+
+    &__top {
+        position: relative;
+        width: fit-content;
+
+        &:after {
+            content: '';
+            position: absolute;
+            left: 20.3%;
+            top: calc(50% - 16px);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: @accent;
+            animation: blink 2s infinite;
+      
+            @media screen and (max-width: @sizes[maxSM]) {
+              width: 20px;
+              height: 20px;
+              top: calc(50% - 10px);
+              left: 30.7%;
+            }
+        }
+    }
+
+    &__wrap {
+        margin-top: 40px;
+        display: grid; 
+        grid-template-columns: .35fr 0.3fr 1fr; 
+        grid-template-rows: 1fr 1fr; 
+        gap: 0px 0px; 
+        grid-template-areas: 
+            "emails . phone"
+            "emails address ."; 
+
+            @media (max-width: @sizes[maxMD]) {
+                grid-template-columns: .8fr 0.3fr 1fr; 
+                grid-template-rows: 1.3fr 1fr; 
+            }
+    }
+
+    .emails {
+        grid-row-start: 1;
+        grid-row-end: 3;
+        &__item {
+            &:not(&:last-child) {
+                margin-bottom: 24px;
+            }
+        }
+
+        &__title {
+            .fontSize(21px, 29px);
+            opacity: .5;
+        }
+
+        &__email {
+            .fontSize(21px, 29px);
+            .font(700);
+            
+        }
+    }
+
+    .phone__title, .address__title {
+        .fontSize(127px, 127px);
+        text-transform: uppercase;
+
+        @media (max-width: @sizes[maxMD]) {
+            .fontSize(80px, 80px);
+        }
+    }
+
+    .phone__number, .address__text {
+        .fontSize(33px, 45px);
+        opacity: .5;
+
+        @media (max-width: @sizes[maxMD]) {
+            .fontSize(25px, 30px);
+        }
+    }
+
+    .phone {
+        grid-column-start: 3;
+        grid-column-end: 3;
+    //     &__title {
+            
+    //     }
+
+    //     &__number {
+            
+    //     }
+    }
+
+    .address {
+        grid-row-start: 2;
+        grid-column-start: 2;
+        grid-column-end: 4;
+    //     &__title {
+    //         .fontSize(127px, 177px);
+    //     }
+
+    //     &__text {
+
+    //     }
+    }
+
+    &__map {
+        position: relative;
+        margin-top: 135px;
+    }
+
+    .map__dot {
+        @pulsewidth: 61px;
+        position: absolute;
+        width: @pulsewidth;
+        height: @pulsewidth;
+        top: 29%;
+        left: 45%;
+
+        &:after {
+            content: '';
+            position: absolute;
+            left: calc(50% - 16.5px);
+            top: calc(50% - 16.5px);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: @accent;
+            animation: pulsecenter 2s infinite;
+            transform: scale(1);
+
+            @media screen and (max-width: @sizes[maxSM]) {
+              width: 20px;
+              height: 20px;
+              top: calc(50% - 10px);
+              left: 30.7%;
+            }
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: calc(50% - (@pulsewidth / 2));
+            top: calc(50% - (@pulsewidth / 2));
+            width: @pulsewidth;
+            height: @pulsewidth;
+            border-radius: 50%;
+            border: 1px solid @accent;
+            background: transparent;
+            animation:pulse 2s infinite ease-in-out;
+            transform: scale(.7);
+            opacity: 1;
+      
+            @media screen and (max-width: @sizes[maxSM]) {
+              width: 20px;
+              height: 20px;
+              top: calc(50% - 10px);
+              left: 30.7%;
+            }
+        }
+    }
 }
+
+@keyframes pulsecenter {
+    0% {
+        transform: scale(1);
+    }
+
+    50%{
+        transform: scale(0.7); 
+    }
+   
+    100%{
+        transform: scale(1); 
+    }
+  }
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0;
+    }
+    50% {
+      transform: scale(.7); 
+      opacity: 1;
+      
+    }
+    100%{
+      opacity: 0;
+      transform: scale(1); 
+    }
+  }
