@@ -72,6 +72,12 @@ function ox_adding_scripts() {
         if(is_404()){
             wp_enqueue_style( 'error', get_template_directory_uri() . '/css/page-error.min.css', array(), '1.1.1');
         }
+
+        // For News
+        if ( is_category('news') ) {
+            wp_enqueue_style('news', get_template_directory_uri() . '/css/page-news.min.css', array(), time(), 'all');
+            wp_enqueue_script('news', get_template_directory_uri() . '/js/min/page-news.min.js', null, time(), true);
+        }
     }
 }
 

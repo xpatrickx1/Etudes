@@ -1,4 +1,38 @@
 <section class="blog">
+<?php 
+$args = new WP_Query([
+  'post_type' => 'projects',
+]);
+$query = new WP_Query( $args );
+$total = $query->found_posts;
+echo $total;?>
+
+<?php
+function get_post_count_for_term_and_post_type( $term_id, $taxonomy, $post_type ) {
+
+  // Build the args
+  $args = array(
+    'post_type' => $post_type,
+    'posts_per_page' => -1,
+    'tax_query' => array(
+      array(
+        'taxonomy' => $taxonomy,
+        'field' => 'id',
+        'terms' => $term_id,
+      )
+    )
+  );
+
+  // Get the posts
+  $posts = get_posts( $args );
+
+  // Return the count
+  return count($posts);
+
+};
+
+add_filter( 'pre_get_posts', 'get_post_count_for_term_and_post_type' );
+?>
   <div class="container">
     <div class="blog__wrap">
       <?php if (have_posts() ) :

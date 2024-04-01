@@ -36,16 +36,19 @@
   &__link{
     line-height: 1.1;
 
-    &:not(:last-child) {
-      margin-right: 40px;
+    @media screen and (min-width: 1024px){
+      &:not(:last-child) {
+        margin-right: 40px;
+      }
     }
   }
 
   &__link > a,
   &__link > span{
     color: white;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 24px;
+    line-height: 33px;
+    font-family: @fontBold;
     cursor: pointer;
     text-transform: uppercase;
     transition: @transition;
