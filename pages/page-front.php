@@ -5,5 +5,4 @@
 <?php get_template_part('includes/sections/page-front/preloader')?>
 <?php get_template_part('includes/sections/page-front/top-screen')?>
 </section>
-<?php echo $lang=get_bloginfo("language"); ?>
 <?php get_footer(); ?>

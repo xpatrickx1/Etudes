@@ -8,7 +8,7 @@
 
     <div class="top-screen__bottom bottom">
         <div class="container">
-            <div class="top-screen__bottom bottom__wrap">
+            <div class="bottom__wrap">
                 <div class="bottom__left">
                     <img src="<?= bloginfo('template_url') . '/images/sferafilm.svg' ?>"
                             alt="Back to homepage logo link"
@@ -23,8 +23,6 @@
             </div>
         </div>
     </div>
-        <!-- <div class="container top-screen__wrap">
-    </div> -->
     
 
 <!-- </section> -->

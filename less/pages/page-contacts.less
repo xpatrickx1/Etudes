@@ -11,6 +11,14 @@
         position: relative;
         width: fit-content;
 
+        @media screen and (max-width: @sizes[maxSM]) {
+            max-width: 320px;
+        }
+
+        @media screen and (max-width: @sizes[maxXS]) {
+            max-width: 320px;
+        }
+
         &:after {
             content: '';
             position: absolute;
@@ -23,10 +31,10 @@
             animation: blink 2s infinite;
       
             @media screen and (max-width: @sizes[maxSM]) {
-              width: 20px;
-              height: 20px;
+              width: 18px;
+              height: 18px;
               top: calc(50% - 10px);
-              left: 30.7%;
+              left: 19.3%;
             }
         }
     }
@@ -41,9 +49,15 @@
             "emails . phone"
             "emails address ."; 
 
-            @media (max-width: @sizes[maxMD]) {
+            @media (max-width: @sizes[maxLG]) {
                 grid-template-columns: .8fr 0.3fr 1fr; 
                 grid-template-rows: 1.3fr 1fr; 
+            }
+
+            @media (max-width: @sizes[maxSM]) {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
             }
     }
 
@@ -73,7 +87,11 @@
         text-transform: uppercase;
 
         @media (max-width: @sizes[maxMD]) {
-            .fontSize(80px, 80px);
+            .fontSize(80px, 85px);
+        }
+
+        @media (max-width: @sizes[maxSM]) {
+            .fontSize(60px, 65px);
         }
     }
 
@@ -114,6 +132,27 @@
     &__map {
         position: relative;
         margin-top: 135px;
+
+        @media (max-width: @sizes[maxSM]) {
+            margin-top: 90px;
+            min-height: 458px;
+            overflow: hidden;
+        }
+
+        img {
+            position: relative;
+
+            @media (max-width: @sizes[maxSM]) {
+                max-width: initial;
+                position: absolute;
+                width: auto;
+                height: 400px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-46%, -52%);
+                z-index: -1;
+            }
+        }
     }
 
     .map__dot {

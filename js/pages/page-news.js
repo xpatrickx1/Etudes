@@ -1,24 +1,10 @@
 $('.news .news__accordion').not(':first').hide();
 
-
-// --close all accordion items --
 $('.news .news__accordion').each(function () {
     $('.news__item').each(function (index) {
-        // if(index!==0) {
         $('.item__description').slideUp();
-        // }
     });
 });
-
-
-// // --open first item in each accordion--
-// $('.news .news__accordion').each(function () {
-//     const $newsFirstTab = $('.news__item', this).first();
-//     $newsFirstTab.addClass( 'currentFaq' );
-//     $newsFirstTab.find('.item__description').slideDown();
-//     $newsFirstTab.find('.item__close').addClass('active');
-//     $newsFirstTab.find('.item__title').addClass('active');
-// });
 
 function openAccordionItem(el) {
     el.addClass('currentFaq');

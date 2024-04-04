@@ -5,7 +5,7 @@
             <div class="team__title">
                 <img src="<?= bloginfo('template_url') . '/images/about/team.svg' ?>"
                     alt="about"
-                    width="585"
+                    width="785"
                     height="226"
                 >
             </div>

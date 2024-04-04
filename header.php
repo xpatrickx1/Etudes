@@ -34,20 +34,32 @@
                 </div> -->
             </a>
 
-            <ul class="header__navigation navigation">
-
-                <?php if (has_nav_menu('header_menu')) :
-                    $nav_args = array(
-                        'theme_location' => 'header_menu',
-                        'container' => '',
-                        'items_wrap' => '%3$s',
-                    );
-                    wp_nav_menu($nav_args);
-                endif; ?>
-                
-            </ul>
-
             <?php if ( function_exists ( 'wpm_language_switcher' ) ) wpm_language_switcher (); ?>
+
+            <div class="header__navigation navigation">
+                <div class="navigation__posts">
+                    <?php 
+                        $categoryID = get_cat_ID ( 'projects' ); 
+                        $category = get_category($categoryID);
+                        $count = $category->category_count;
+                        echo $count;
+                    ?>
+                </div>
+
+                <ul class="navigation__list">
+
+                    <?php if (has_nav_menu('header_menu')) :
+                        $nav_args = array(
+                            'theme_location' => 'header_menu',
+                            'container' => '',
+                            'items_wrap' => '%3$s',
+                        );
+                        wp_nav_menu($nav_args);
+                    endif; ?>
+                    
+                </ul>
+            </div>
+            
 
             <div class="header__hamburger js-hamburger">
                 <div class="hamburger-line1"></div>

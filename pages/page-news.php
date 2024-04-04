@@ -18,7 +18,6 @@ add_filter( 'pre_get_posts', 'my_search_filter' );?>
                 height="226"
             >
         </div>
-        <?php $count = $custom_posts->found_posts; ?>
     <div class="news__accordion">
         <?php if (have_posts() ) :
             while (have_posts()) : the_post(); ?>
