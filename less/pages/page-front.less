@@ -50,7 +50,7 @@
             transform: translate(-50%, -50%);
             border: 2px solid @white;
             width: 95%;
-            height: 95%;
+            height: 90%;
             max-width: 1408px;
             z-index: 3;
             background-position: calc(100% - 21px) calc(100% - 24px);
@@ -67,7 +67,7 @@
             transform: translate(-50%, -50%);
 
 
-            @media (max-width: @sizes[maxSM]) {
+            @media (max-width: @sizes[maxMD]) {
                 width: auto;
                 height: 100%;
             }
@@ -112,6 +112,10 @@
 
             @media (max-width: @sizes[maxSM]) {
                 max-width: 450px;
+            }
+
+            @media (max-width: @sizes[maxSMPlus]) {
+                max-width: 500px;
             }
 
             &:after {

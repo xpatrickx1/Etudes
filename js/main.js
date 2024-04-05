@@ -7,6 +7,32 @@ $(document).ready(() => {
         newLocation = '',
         firstLoad = false;
 
+
+    var anchors = document.querySelectorAll('.navigation a');
+    
+    
+    for (var idx=0; idx<anchors.length; idx+=1) {
+        if (anchors[idx].hostname !== window.location.hostname ||
+                anchors[idx].pathname === window.location.pathname) {
+            continue;
+        }
+        console.log(anchors.length);
+        anchors[idx].addEventListener('click', function(event) {
+            var fader = document.querySelector('main'),
+                anchor = event.currentTarget;
+            console.log(anchor);
+            var listener = function() {
+                window.location = anchor.href;
+                fader.removeEventListener('animationend', listener);
+            };
+            fader.addEventListener('animationend', listener);
+                
+            event.preventDefault();
+            fader.classList.add('fade-out');
+        });
+    }
+
+
     jQuery( function( $ ){ 
         // $( '.header__logo' ).click( function(){ // при клике на элемент с id="misha_button" 
         //     alert( 'Если это работает, уже неплохо' ); // выводим сообщение
@@ -137,4 +163,14 @@ $(document).ready(() => {
         return $('html').hasClass('csstransitions');
     }
 
+
+});
+
+
+window.addEventListener('pageshow', function (event) {
+    if (!event.persisted) {
+        return;
+    }
+    var fader = document.querySelector('main');
+    fader.classList.remove('fade-out');
 });

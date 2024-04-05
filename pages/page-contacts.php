@@ -19,18 +19,14 @@
     <div class="contacts__wrap">
 
       <div class="contacts__emails emails">
-          <div class="emails__item">
-            <div class="emails__title">bid requests</div>
-            <div class="emails__email">bid@sferafilm.com</div>
-          </div>
-          <div class="emails__item">
-          <div class="emails__title">career</div>
-            <div class="emails__email">cv@sferafilm.com</div>
-          </div>
-          <div class="emails__item">
+        <div class="emails__item">
           <div class="emails__title">general info</div>
-            <div class="emails__email">yo@sferafilm.com</div>
-          </div>
+          <div class="emails__email">Info@sferafilm.com</div>
+        </div>
+        <div class="emails__item">
+        <div class="emails__title">career</div>
+          <div class="emails__email">Casting@sferafilm.com</div>
+        </div>
       </div>
 
       <div class="contacts__phone phone">

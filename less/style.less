@@ -1,5 +1,3 @@
-/* libs styles*/
-// @import "libs/slick";
 
 /* base styles*/
 @import "base/fonts";
@@ -10,67 +8,45 @@
 @import "base/grid";
 
 
-
 /* modules */
 @import "modules/header";
 @import "modules/footer";
+@import "modules/lang-toggler";
 
-/* universal sections */
-// @import "modules/seo-accordion";
+main {
+  animation: fadein .3s ease-out;
+  opacity: 1;
+}
 
-/* main page sections */
-@import "sections/first-section";
-// @import "sections/features";
-// @import "sections/writers-info";
-// @import "sections/samples";
-// @import "sections/counters";
+@keyframes fade-out {
+  from { opacity: 1 }
+    to { opacity: 0 }
+}
 
-// @import "sections/feedbacks";
+@keyframes fade-in {
+  from { opacity: 0 }
+    to { opacity: 1 }
+}
 
-/* -------------------------------- 
+main.fade-out {
+  opacity: 0;
+  animation-name: fade-out;
+}
 
-Primary style
+main.fade-in {
+  opacity: 1;
+  animation-name: fade-in;
+}
 
--------------------------------- */
-// *, *::after, *::before {
-//     box-sizing: border-box;
-//   }
-  
-//   html {
-//     font-size: 62.5%;
-//   }
-  
-//   body {
-//     font-size: 1.6rem;
-//     font-family: "Open Sans", sans-serif;
-//     color: #4089a6;
-//     background-color: #ffffff;
-//     -webkit-font-smoothing: antialiased;
-//     -moz-osx-font-smoothing: grayscale;
-//   }
-  
-//   a {
-//     color: #283040;
-//     text-decoration: none;
-//   }
-  
-  h1 {
-    color: #ffffff;
-    margin-bottom: 1em;
-    font-size: 2.2rem;
-  }
-  @media only screen and (min-width: 768px) {
-    h1 {
-      font-size: 4.4rem;
-      font-weight: 300;
-    }
-  }
-  
-  /* -------------------------------- 
-  
-  Patterns - reusable parts of our design
-  
-  -------------------------------- */
+.cd-projects {
+  animation: fadein .5s ease-in;
+  opacity: 1;
+}
+
+@keyframes fadein {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
   // .cd-btn {
   //   display: inline-block;
   //   padding: 1.4em 1.6em;
@@ -289,39 +265,3 @@ Primary style
   //   }
   // }
   
-
-  .cd-projects {
-    position: relative;
-    height: 100%;
-    background-color: @black;
-    overflow: hidden;
-    
-
-    &:before {
-      position: absolute;
-      content: '';
-      top: 83px;
-      left: 38px;
-      width: 100%;
-      height: 100%;
-      background-image: url('../images/icons/logo.svg');
-      background-repeat: no-repeat;
-      background-size: 119%;
-      animation: growup 2s ease-out;
-      z-index: 0;
-  }
-  }
-  @keyframes growup {
-    0% { 
-      background-size: 10%;
-      left: 0;
-      top: -80px; 
-    }
-
-    100% { 
-      background-size: 119%;
-      top: 83px;
-      left: 38px;
-      z-index: 0;
-    }
-}
