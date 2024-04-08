@@ -1,6 +1,6 @@
 <!-- <section class="top-screen cd-index cd-main-content"> -->
 
-    <div class="top-screen__video">
+    <div class="top-screen__video video">
         <video autoplay muted loop >
             <source src="<?= bloginfo('template_url') . '/images/home.mp4' ?>" type="video/webm">
         </video>
@@ -17,8 +17,9 @@
                     >
                 </div>
                 <div class="bottom__right">
-                    <p>Продакшн-студія що створюємо унікальні та успішні проекти,
-                    які надихають та завойовують інтерес глядачів.</p>
+                    <?php the_post();
+                        the_content();
+                    ?>
                 </div>
             </div>
         </div>

@@ -11,6 +11,7 @@ function openAccordionItem(el) {
     el.find('.item__description').slideDown();
     el.find('.item__close').addClass('active');
     el.find('.item__title').addClass('active');
+    hideImage();
 }
 
 function closeAccordionItem(el) {
@@ -37,5 +38,56 @@ $('.news__item').on('click', function(el){
         openAccordionItem($(this));
     }
 });
+
+
+let attached = false;
+const imgContainer = $('#imgContainer');
+
+const getElmtImage = (elmt) => {
+    return $(elmt).find('.item__img')[0];
+};
+
+const followMouse = (elmt, event) => {
+    elmt.css('left', `${event.x + 20 + 'px'}`);
+    elmt.css('top', `${event.y + 20 + 'px'}`);
+};
+
+function showImage(elmt) {
+    const image = getElmtImage(elmt);
+    imgContainer.css('background-image', `url(${image.dataset.src})`);
+    if (!attached) {
+        attached = true;
+        imgContainer.css('display', 'block');
+        document.addEventListener('pointermove', function(event) {
+            followMouse(imgContainer, event);
+        });
+    }
+}
+
+function hideImage() {
+    attached = false;
+    imgContainer.css('display', 'none');
+    document.removeEventListener('pointermove', followMouse);
+}
+
+function addActions(el) {
+
+    const windowWidth = $( window ).width();
+
+    if( windowWidth > 1024 ) {
+        $(el).mouseenter(function(){
+            if (!($(this).hasClass('currentFaq'))) {
+                showImage($(this)[0]);
+            }
+        });
+    
+        $(el).mouseleave(function(){
+            hideImage();
+        });
+    }
+    
+}
+
+addActions('.news__item');
 
 

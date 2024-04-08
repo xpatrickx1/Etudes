@@ -8,106 +8,6 @@ $(document).ready(() => {
         firstLoad = false;
 
 
-    var anchors = document.querySelectorAll('.navigation a');
-    
-    
-    for (var idx=0; idx<anchors.length; idx+=1) {
-        if (anchors[idx].hostname !== window.location.hostname ||
-                anchors[idx].pathname === window.location.pathname) {
-            continue;
-        }
-        console.log(anchors.length);
-        anchors[idx].addEventListener('click', function(event) {
-            var fader = document.querySelector('main'),
-                anchor = event.currentTarget;
-            console.log(anchor);
-            var listener = function() {
-                window.location = anchor.href;
-                fader.removeEventListener('animationend', listener);
-            };
-            fader.addEventListener('animationend', listener);
-                
-            event.preventDefault();
-            fader.classList.add('fade-out');
-        });
-    }
-
-
-    jQuery( function( $ ){ 
-        // $( '.header__logo' ).click( function(){ // при клике на элемент с id="misha_button" 
-        //     alert( 'Если это работает, уже неплохо' ); // выводим сообщение
-        // });
-    });
-
-    // jQuery( function( $ ){
-    //     $( '.header__logo' ).click(function(){
-    //         $.ajax({
-    //             url: 'http://localhost:8888/sfera/wp-content/themes/Sfera/myajax.php',
-    //             type: 'POST',
-    //             data: 'param1=2&param2=3', // можно также передать в виде объекта
-    //             beforeSend: function( xhr ) {
-    //                 $( '.header__logo' ).text( 'Загрузка, 5 сек...' );	
-    //             },
-    //             success: function( data ) {
-    //                 $( '.header__logo' ).text( 'Отправить' );	
-    //                 alert( data );
-    //             }
-    //         });
-    //         // если элемент – ссылка, то не забываем:
-    //         // return false;
-    //     });
-    // });
-
-    // jQuery(function($){
-    //     $('.header__logo').click(function(){
-    //         $.ajax({
-    //             url: '<?php echo admin_url( "admin-ajax.php" ) ?>',
-    //             type: 'POST',
-    //             data: 'action=misha&param1=2&param2=3', // можно также передать в виде массива или объекта
-    //             beforeSend: function( xhr ) {
-    //                 $('.header__logo').text('Загрузка, 5 сек...');	
-    //             },
-    //             success: function( data ) {
-    //                 $('.header__logo').text('Отправить');	
-    //                 alert( data );
-    //             }
-    //         });
-    //     });
-    // });
-    
-    // $('.navigation a').on('click', function(event){
-    //     event.preventDefault();
-    //     $.ajax({
-    //         type: 'POST',
-    //         url: '../../../../wp-admin/admin-ajax.php',
-    //         dataType: 'html', // add data type
-    //         data: { action : 'get_ajax_posts' },
-    //         success: function( response ) {
-    //             console.log( response );
-    
-    //             // $( '.posts-area' ).html( response ); 
-    //         }
-    //     });
-    //     const newPage = $(this).attr('href');
-    //     newPage.split('/sfera/');
-    //     let newPageUrl  = newPage.split('/sfera/')[1].split('/')[0];
-    //     // if( !isAnimating ) changePage(newPageUrl, true);
-    //     firstLoad = true;
-    // });
-    
-    //detect the 'popstate' event - e.g. user clicking the back button
-    // $(window).on('popstate', function() {
-    //     if( firstLoad ) {
-
-    //         var newPageArray = location.pathname.split('/sfera/'),
-    //             //this is the url of the page to be loaded 
-    //             newPage = newPageArray[newPageArray.length - 1];
-            
-    //         if( !isAnimating  &&  newLocation != newPage ) changePage(newPage, false);
-    //     }
-    //     firstLoad = true;
-    // });
-    
     function changePage(url, bool) {
         isAnimating = true;
         $('body').addClass('page-is-changing');
@@ -167,10 +67,46 @@ $(document).ready(() => {
 });
 
 
+function fadeInPage() {
+    if (!window.AnimationEvent) { return; }
+    var fader = document.querySelector('main');
+    fader.classList.add('fade-out');
+}
+document.addEventListener('DOMContentLoaded', function() {
+    if (!window.AnimationEvent) { return; }
+    var anchors = document.querySelectorAll('.navigation a');
+    
+    for (var idx=0; idx<anchors.length; idx+=1) {
+
+        if (anchors[idx].hostname !== window.location.hostname ||
+            anchors[idx].pathname === window.location.pathname) {
+            continue;
+        }
+
+        anchors[idx].addEventListener('click', function(event) {
+            
+            var fader = document.querySelector('main'),
+                anchor = event.currentTarget;
+            
+            var listener = function() {
+                window.location = anchor.href;
+                fader.removeEventListener('animationend', listener);
+            };
+            fader.addEventListener('animationend', listener);
+            
+            event.preventDefault();
+            // fadeInPage();
+            fader.classList.add('fade-in');
+        });
+    }
+});
+
+
 window.addEventListener('pageshow', function (event) {
     if (!event.persisted) {
         return;
     }
     var fader = document.querySelector('main');
-    fader.classList.remove('fade-out');
+    fader.classList.remove('fade-in');
 });
+

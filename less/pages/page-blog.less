@@ -25,7 +25,7 @@
     border-radius: 50%;
     background-repeat: no-repeat;
     transform: scale(1);
-    animation: growup 2s ease-out;
+    animation: growup .2s ease-out;
     z-index: 0;
 
     @media (max-width: @sizes[maxXS]) {
@@ -37,27 +37,23 @@
       max-width: 320px;
       max-height: 320px;
     }
+
+    
   }
 }
-@keyframes growup {
-  0% { 
-    transform: scale(0);
-    top: -403px;
-    left: -382px;
-    z-index: 200;
-  }
 
-  95% { 
-    z-index: 200;
-  }
+main.fade-out {
 
-  100% { 
-    transform: scale(1);
-    top: 200px;
-    left: 98px;
-    z-index: 0;
+  .cd-projects {
+    
+
+    &:before {
+        animation: getsmall 2s ease-out;
+    }
   }
 }
+
+
 
 
 .top-screen {
@@ -252,9 +248,6 @@
     }
   }
 
-  // &__right {
-
-  // }
 
   .info {
     &__main {
