@@ -43,3 +43,14 @@
     </div>
   </div>
 </section>
+<div class="glitch" style="background-image: url(https://images.unsplash.com/photo-1493514789931-586cb221d7a7?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1920&q=80);">
+  <div class="channel r"></div>
+  <div class="channel g"></div>
+  <div class="channel b"></div>
+</div>
+
+<div class="glitch" style="background-image: url(https://images.unsplash.com/photo-1544794040-a6ab770bec83?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1920&q=80);">
+  <div class="channel r"></div>
+  <div class="channel g"></div>
+  <div class="channel b"></div>
+</div>

@@ -15,11 +15,18 @@
                     while ( have_rows('team_list')) : the_row(); ?>
 
                         <div class="team__item item">
-                            <div class="item__icon">
+                            <div class="item__icon" style="background: url( <?= get_sub_field('persone_photo')['url'];?> )">
                                 <img src="<?= get_sub_field('persone_photo')['url'];?>" >
-                                <?php $reasonsCounter++ ?>
-                            </div>
+                            
 
+                            <div class="glitch">
+                                <div class="glitch__img" style="background-image: url( <?= get_sub_field('persone_photo')['url'];?> )"></div>
+                                <div class="glitch__img" style="background-image: url(<?= get_sub_field('persone_photo')['url'];?>)"></div>
+                                <div class="glitch__img" style="background-image: url(<?= get_sub_field('persone_photo')['url'];?>)"></div>
+                                <div class="glitch__img" style="background-image: url(<?= get_sub_field('persone_photo')['url'];?>)"></div>
+                                <div class="glitch__img" style="background-image: url(<?= get_sub_field('persone_photo')['url'];?>)"></div>
+                            </div>
+                            </div>
                             <div class="item__name"><?= get_sub_field('persone_name') ?></div>
 
                             <div class="item__position"><?= get_sub_field('persone_position') ?></div>

@@ -281,50 +281,6 @@ add_theme_support( 'post-thumbnails' );
 //add_filter('the_content', 'removeTitleFromContent');
 
 
-function get_ajax_posts() {
-    // Query Arguments
-    $args = array(
-        'post_type' => array('projects'),
-        'post_status' => array('publish'),
-        'posts_per_page' => 40,
-        'nopaging' => true,
-        'order' => 'DESC',
-        'orderby' => 'date',
-        // 'cat' => 1,
-    );
-
-    // The Query
-    $ajaxposts = new WP_Query( $args );
-
-    $response = '';
-
-    // The Query
-    $args = array(
-        'cat' => 60,
-        'post__not_in' => [get_the_ID()],
-    );
-    
-    $second_query = new WP_Query($args);
-
-    echo $second_query;
-
-    echo '<div class="gov">no</div>';
-
-    exit; // leave ajax call
-}
-
-
-add_action( 'wp_ajax_misha', 'truemisha_ajax' ); // wp_ajax_{ЗНАЧЕНИЕ ПАРАМЕТРА ACTION!!}
-add_action( 'wp_ajax_nopriv_misha', 'truemisha_ajax' );  // wp_ajax_nopriv_{ЗНАЧЕНИЕ ACTION!!}
-// первый хук для авторизованных, второй для не авторизованных пользователей
- 
-function truemisha_ajax(){
- 
-	$summa = $_POST[ 'param1' ] + $_POST[ 'param2' ];
-	echo $summa;
- 
-	die; // даём понять, что обработчик закончил выполнение
-}
 
 /* Functions for processing custom fields */
 function get_custom_field($field, $format = '', $date_format = 'F j, Y')
@@ -366,3 +322,6 @@ function display_google_map($code)
         $code = str_replace("output=embed", "output=embed&iwloc=near", $code);
         return $code;
 }
+
+
+
