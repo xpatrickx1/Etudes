@@ -34,8 +34,6 @@
                 </div> -->
             </a>
 
-            <?php if ( function_exists ( 'wpm_language_switcher' ) ) wpm_language_switcher (); ?>
-
             <div class="header__navigation navigation">
                 <div class="navigation__posts">
                     <?php 
@@ -60,6 +58,7 @@
                 </ul>
             </div>
             
+            <?php if ( function_exists ( 'wpm_language_switcher' ) ) wpm_language_switcher (); ?>
 
             <div class="header__hamburger js-hamburger">
                 <div class="hamburger-line1"></div>

@@ -143,6 +143,7 @@
 
         img {
             position: relative;
+            width: 100%;
 
             @media (max-width: @sizes[maxSM]) {
                 max-width: initial;
@@ -206,6 +207,16 @@
               top: calc(50% - 16px);
               left: calc(50% - 17px);
             }
+        }
+    }
+
+    .social {
+        display: flex;
+        gap: 36px;
+        padding: 18px 0 21px;
+        
+        &__item {
+            cursor: pointer;
         }
     }
 }

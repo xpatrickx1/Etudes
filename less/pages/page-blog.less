@@ -4,28 +4,24 @@
 @import "../sections/video";
 
 
-
-.cd-projects {
+.main {
   position: relative;
-  height: 100%;
-  background-color: @black;
   overflow: hidden;
-  
 
   &:before {
-    position: fixed;
+    position: absolute;
     content: '';
-    top: 200px;
-    left: 98px;
-    width: 100%;
-    height: 100%;
-    max-width: 924px;
-    max-height: 924px;
+    top: 100px;
+    // left: calc( ( (100vw - 1400px) / 2) + 50px );
+    // width: 100%;
+    // height: 100%;
+    // max-width: 924px;
+    // max-height: 924px;
     background: @accent;
     border-radius: 50%;
     background-repeat: no-repeat;
-    transform: scale(1);
-    animation: growup 1s ease-out;
+    animation: growup 2s forwards; 
+    animation-delay: .5s;
     z-index: 0;
 
     @media (max-width: @sizes[maxXS]) {
@@ -36,10 +32,50 @@
     @media (max-width: @sizes[maxSM]) {
       max-width: 320px;
       max-height: 320px;
+    } 
+  }
+
+  &.fade-out {
+    &:before {
+      animation: getsmallnews 1s ease-out;
     }
+  }
+
+}
+
+.cd-projects {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  
+
+  // &:before {
+  //   position: absolute;
+  //   content: '';
+  //   top: 100px;
+  //   // left: calc( ( (100vw - 1400px) / 2) + 50px );
+  //   width: 100%;
+  //   height: 100%;
+  //   max-width: 924px;
+  //   max-height: 924px;
+  //   background: @accent;
+  //   border-radius: 50%;
+  //   background-repeat: no-repeat;
+  //   animation: growup 1s ease-out;
+  //   z-index: 0;
+
+  //   @media (max-width: @sizes[maxXS]) {
+  //     max-width: 320px;
+  //     max-height: 320px;
+  //   }
+
+  //   @media (max-width: @sizes[maxSM]) {
+  //     max-width: 320px;
+  //     max-height: 320px;
+  //   }
 
     
-  }
+  // }
 }
 
 main.fade-out {
@@ -57,8 +93,8 @@ main.fade-out {
 
 
 .top-screen {
-  z-index: 300;
   position: relative;
+
   &__wrap {
     position: relative;
     width: fit-content;
@@ -102,7 +138,6 @@ main.fade-out {
 .blog{
   position: relative;
   padding: 0 0 60px;
-  z-index: 300;
   
   .container {
     padding: 0;

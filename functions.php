@@ -48,7 +48,7 @@ function ox_adding_scripts() {
 
         //добавляем стили для блога и постов
         if(is_home() || is_single()){
-            wp_enqueue_style( 'blog', get_template_directory_uri() . '/css/page-blog.min.css', array(), '1');
+            wp_enqueue_style( 'post', get_template_directory_uri() . '/css/page-post.min.css', array(), '1');
         }
 
         if (is_front_page()) {
@@ -324,4 +324,6 @@ function display_google_map($code)
 }
 
 
-
+@ini_set( 'upload_max_size' , '256M' );
+@ini_set( 'post_max_size', '256M');
+@ini_set( 'max_execution_time', '300' );
