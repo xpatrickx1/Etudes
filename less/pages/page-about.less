@@ -175,17 +175,29 @@
 
     .item {
         width: 48%;
+        display: flex;
+        flex-direction: column;
         background: @white;
         border: 25px solid @white;
         color: @black;
 
+        @media (max-width: @sizes[maxLG]) {
+            border: 15px solid @white;
+        }
+
+        @media (max-width: @sizes[maxMD]) {
+            border: 10px solid @white;
+        }
+
         @media (max-width: @sizes[maxSM]) {
             width: 100%;
-          }
+            border: 10px solid @white;
+        }
 
         &__icon {
             position: relative;
             max-height: 466px;
+            height: 100%;
             overflow: hidden;
         }
 
@@ -198,6 +210,10 @@
         &__position {
             .fontSize(19px, 26px);
             .font(400);
+
+            @media (max-width: @sizes[maxLG]) {
+             padding-bottom: 10px;
+            }
         }
     }
 }

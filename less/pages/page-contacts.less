@@ -217,6 +217,17 @@
         
         &__item {
             cursor: pointer;
+           
+
+            svg path {
+                transition: @transition;
+            }
+            
+            &:hover, &:active {
+                svg path {
+                    fill: @accent;
+                }
+            }
         }
     }
 }
