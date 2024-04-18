@@ -1,7 +1,7 @@
 <div class="top-screen__video video">
-    <video autoplay muted loop >
-        <source src="<?= bloginfo('template_url') . '/images/home.mp4' ?>" type="video/webm">
-    </video>
+  
+    <video autoplay muted loop playsinline controls="false" width='100%' height='100%' src='<?= bloginfo('template_url') . '/images/home.mp4' ?>' type='video/mp4'></video>
+    
 </div> 
 
 <div class="top-screen__bottom bottom">

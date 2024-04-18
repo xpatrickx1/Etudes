@@ -5,6 +5,7 @@
             <video autoplay muted loop >
                 <source src="<?= get_field( 'post_video' )['url'] ?>" type="video/webm">
             </video>
+            <video autoplay muted loop playsinline controls="false" src='<?= get_field( 'post_video' )['url'] ?>' type='video/mp4'></video>
         </div> 
         
         <div class="container">

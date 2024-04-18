@@ -20,8 +20,6 @@
     </div>
 
     <div class="top-screen__video">
-        <video autoplay muted loop >
-            <source src="<?= bloginfo('template_url') . '/images/home.mp4' ?>" type="video/webm">
-        </video>
+        <video autoplay muted loop playsinline controls="false" src='<?= bloginfo('template_url') . '/images/home.mp4' ?>' type='video/mp4'></video>
     </div> 
 </section>
