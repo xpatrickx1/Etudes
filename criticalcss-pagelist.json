@@ -3,6 +3,23 @@
     {
       "link": "/",
       "name": "front"
+    },
+    {
+      "link": "/news/",
+      "name": "news"
+    },
+    {
+      "link": "/about/",
+      "name": "about"
+    },
+    {
+      "link": "/contacts/",
+      "name": "contacts"
+    },
+    {
+      "link": "/blog/",
+      "name": "blog"
     }
+    
   ]
 }

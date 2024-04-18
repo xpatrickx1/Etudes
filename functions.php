@@ -87,7 +87,11 @@ add_action( 'wp_enqueue_scripts', 'ox_adding_scripts' );
 //--------------------------------------------------
 //render-blocking styles
 $css_files = array(
-    'main'
+    'main',
+    'page-about',
+    'page-blog',
+    'page-news',
+    'page-contacts',
 );
 
 add_action('wp_enqueue_scripts', 'ox_adding_critical_css');
@@ -95,22 +99,44 @@ add_action('wp_enqueue_scripts', 'ox_adding_critical_css');
 
 function ox_adding_critical_css()
 {
-    if (!is_front_page()) return;
-
     global $wp_styles, $css_files;
 
     if (empty($css_files)) return;
 
     $registered_styles = $css_files;
     $css_files = array();
+    $ver_variable = '?ver=';
+    $ver_variable_length = strlen($ver_variable);
 
     foreach ($registered_styles as $item) {
-        $s = $wp_styles->registered[$item]->src . '?ver=' . $wp_styles->registered[$item]->ver;
-        $css_files[$item] = $s;
+        $s = $wp_styles->registered[$item]->src . $ver_variable . $wp_styles->registered[$item]->ver;
+        $current_style_length = strlen($s);
+        if ($current_style_length > $ver_variable_length) {
+            $css_files[$item] = $s;
+        }
     }
 
-    $critical_css = load_template_part('css/critical.css');
-    echo '<style>' . $critical_css . '</style>';
+    // $critical_css = load_template_part('css/critical.css');
+    // echo '<style>' . $critical_css . '</style>';
+
+    $pageTemplates = array(
+        "front-page" => "front",
+        "page-about" => "about",
+        "page-contacts" => "contacts",
+        "page-blog" => "blog",
+        "page-news" => "news",
+    );
+    $currentPageTemplate = get_page_template_slug();
+    $currentPageTemplateName = str_replace(['pages/', '.php'], '', $currentPageTemplate);
+    $pageTemplateKeys = array_keys($pageTemplates);
+    $counter = 0;
+    foreach ($pageTemplates as $currentTemplate) {
+        if ($currentPageTemplateName == $pageTemplateKeys[$counter]) {
+            $currentCritical = load_template_part("css/critical-$pageTemplates[$currentPageTemplateName].css");
+            echo '<style>' . $currentCritical . '</style>';
+        }
+        $counter = $counter + 1;
+    }
 
     global $css_files;
 

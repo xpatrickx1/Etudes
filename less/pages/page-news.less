@@ -9,25 +9,10 @@
     position: absolute;
     content: '';
     top: 200px;
-    // left: calc( ( (100vw - 1400px) / 2) + 120px );
-    // width: 900px;
-    // height: 900px;
     background: #c91c2d;
     border-radius: 50%;
     background-repeat: no-repeat;
-    animation: grow 2s forwards; 
-    animation-delay: .5s;
-    z-index: 0;
-
-    // @media (max-width: @sizes[maxXS]) {
-    //   max-width: 320px;
-    //   max-height: 320px;
-    // }
-
-    // @media (max-width: @sizes[maxSM]) {
-    //   max-width: 320px;
-    //   max-height: 320px;
-    // }
+    animation: grownews 1.5s forwards .5s; 
   }
 
   &.fade-out {
@@ -37,86 +22,15 @@
   }
 }
 
-
-@media (max-width: 5000px) {
-  @contWidth: 1400px;
-  @circleSize: 924px;
-}
-
-@media (max-width:767px) {
-  @contWidth: 1000px;
-  @circleSize: 320px;
-}
-
-@keyframes grow {
-  0% { 
-    top: 20px;
-    left: calc( ( (100vw - 1400px) / 2) + 50px );
-    width: 0;
-    height: 0;
-  }
-
-  100% { 
-    top: 200px;
-    left: calc( ( (100vw - 1400px) / 2) + 120px );
-    width: 924px;
-    height: 924px;
-  }
-}
-
-@media (max-width:767px) {
-  @keyframes grow {
-    0% { 
-      top: 20px;
-      left: 20px;
-      width: 0;
-      height: 0;
-    }
-  
-    100% { 
-      top: 200px;
-      left: 30%;
-      width: 320px;
-      height: 320px;
-    }
-  }
-}
-
-
-
 .news {
     color: @white;
     letter-spacing: 0.01em;
     position: relative;
     height: 100%;
     overflow: hidden;
+    z-index: 300;
+    animation: indexchange 1s forwards 1.5s;
     
-    
-    //   &:before {
-    //     position: absolute;
-    //     content: '';
-    //     top: 120px;
-    //     left: 9%;
-    //     width: 924px;
-    //     height: 924px;
-    //     background: @accent;
-    //     border-radius: 50%;
-    //     background-repeat: no-repeat;
-    //     background-size: 80%;
-    //     animation: growup .3s ease-out;
-    //     z-index: 0;
-
-    //     @media (max-width: @sizes[maxXS]) {
-    //       max-width: 320px;
-    //       max-height: 320px;
-    //     }
-    
-    //     @media (max-width: @sizes[maxSM]) {
-    //       max-width: 320px;
-    //       max-height: 320px;
-    //     }
-    // }
-
       &__accordion {
         margin-top: 30px;
       }

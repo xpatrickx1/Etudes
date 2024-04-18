@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no">
     <title><?php bloginfo('name') . ' | ' . wp_title(); ?></title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
     <?php wp_head(); ?>
@@ -23,15 +24,6 @@
                             height="64px"
                     >
                 </div>
-
-                <!-- <div class="logo__mobile">
-                    <img
-                        src="<?= bloginfo('template_url') . '/images/icons/logo.svg' ?>"
-                        alt="Back to homepage logo link"
-                        class=""
-                        width="109px"
-                        height="64px">
-                </div> -->
             </a>
 
             <div class="header__navigation navigation">
