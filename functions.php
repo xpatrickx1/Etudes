@@ -49,6 +49,7 @@ function ox_adding_scripts() {
         //добавляем стили для блога и постов
         if(is_home() || is_single()){
             wp_enqueue_style( 'post', get_template_directory_uri() . '/css/page-post.min.css', array(), '1');
+            wp_enqueue_script('post', get_template_directory_uri() . '/js/min/page-post.min.js', null, time(), true);
         }
 
         if (is_front_page()) {

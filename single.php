@@ -1,12 +1,26 @@
 <?php get_header(); ?>
 
     <div class="post">
-        <div class="top-screen__video video">
-            <video autoplay muted loop >
-                <source src="<?= get_field( 'post_video' )['url'] ?>" type="video/webm">
-            </video>
-            <video autoplay muted loop playsinline controls="false" src='<?= get_field( 'post_video' )['url'] ?>' type='video/mp4'></video>
-        </div> 
+
+        <div class="top-screen__top">
+
+            <div class="top-screen__video video">
+                <video 
+                    autoplay 
+                    muted 
+                    loop 
+                    playsinline 
+                    controls="false" 
+                    src='<?= get_field( 'post_video' )['url'] ?>' 
+                    type='video/mp4'>
+                </video>
+            </div> 
+
+            <div class="watch">
+                <div id="watch">00:00:000</div>
+            </div>
+            
+        </div>
         
         <div class="container">
             <div class="post__wrap">
