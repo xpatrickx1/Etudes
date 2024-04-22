@@ -77,6 +77,16 @@
   
     .video {
       min-height: 480px;
+
+      @media ( min-width: @sizes[ minMD ] ) {
+        min-height: 600px;
+        max-width: 1520px;
+        margin: 0 auto;
+      }
+
+      @media ( min-width: @sizes[ minLG ] ) {
+        min-height: 720px;
+      }
     }
   
     h1 {

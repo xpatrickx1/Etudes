@@ -198,14 +198,26 @@
         z-index: 0;
       }
     }
-  }
+}
   
-    
-
 @keyframes indexchange {
     0% { z-index: 300 }
     90% { 
         z-index: 300;
     }
     100% { z-index: 1 }
+}
+
+@keyframes removepreloader {
+    0% { 
+      display: flex;
+    }
+
+    99% { 
+        display: flex;
+      }
+  
+    100% { 
+      display: none;
+    }
 }

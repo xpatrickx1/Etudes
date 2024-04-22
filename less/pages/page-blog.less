@@ -4,46 +4,46 @@
 @import "../sections/video";
 
 
-.main {
-  position: relative;
-  overflow: hidden;
+// .main {
+//   position: relative;
+//   overflow: hidden;
 
-  &:before {
-    position: absolute;
-    content: '';
-    top: 100px;
-    background: @accent;
-    border-radius: 50%;
-    background-repeat: no-repeat;
-    animation: growup 2s forwards; 
-    animation-delay: .5s;
+//   &:before {
+//     position: absolute;
+//     content: '';
+//     top: 100px;
+//     background: @accent;
+//     border-radius: 50%;
+//     background-repeat: no-repeat;
+//     animation: growup 2s forwards; 
+//     animation-delay: .5s;
 
-    @media (max-width: @sizes[maxXS]) {
-      max-width: 320px;
-      max-height: 320px;
-    }
+//     @media (max-width: @sizes[maxXS]) {
+//       max-width: 320px;
+//       max-height: 320px;
+//     }
 
-    @media (max-width: @sizes[maxSM]) {
-      max-width: 320px;
-      max-height: 320px;
-    } 
-  }
+//     @media (max-width: @sizes[maxSM]) {
+//       max-width: 320px;
+//       max-height: 320px;
+//     } 
+//   }
 
-  &.fade-out {
-    &:before {
-      animation: getsmall 1s forwards;
-    }
-  }
+//   &.fade-out {
+//     &:before {
+//       animation: getsmall 1s forwards;
+//     }
+//   }
 
-}
+// }
 
-.cd-projects {
-  position: relative;
-  height: 100%;
-  overflow: hidden;
-  z-index: 300;
-  animation: indexchange 1s forwards 1.5s;
-}
+// .cd-projects {
+//   position: relative;
+//   height: 100%;
+//   overflow: hidden;
+//   z-index: 300;
+//   animation: indexchange 1s forwards 1.5s;
+// }
 
 .top-screen {
   position: relative;
@@ -94,6 +94,10 @@
   
   .container {
     padding: 0;
+
+    @media (max-width: @sizes[maxMD]) {
+      padding: 0 16px;
+    }  
   }
 
   &__wrap {
@@ -113,34 +117,116 @@
     overflow: hidden;
     transition: .3s;
     position: relative;
-    min-height: 356px;
-    filter: grayscale(1);
-    @media (max-width: @sizes[maxSM]) {
+    min-height: 464px;
+
+    @media (max-width: @sizes[maxMD]) {
+      min-height: 356px;
+    }
+    
+
+    @media (max-width: @sizes[maxMD]) {
       width: 100%;
+      min-height: 326px;
     }
 
-    &:hover {
+    @media (min-width: @sizes[minLG]) {
+      filter: grayscale(1);
 
-      filter: grayscale(0);
+      &:active, &:hover {
+        filter: grayscale(0); 
+
+        .info {
+          opacity: 1;
+        }
+
+        h2 {
+          transform: translateX(-20px);
+        }
+      }
     }
 
     h2 {
+      grid-row-start: 2;
+      align-self: center;
+      justify-self: center;
       text-align: center;
+      max-width: 400px;
       .fontSize(50px, 70px);
       .font(700);
       color: @white;
       text-transform: uppercase;
       margin: 0;
+      transition: @transition;
 
-      @media (max-width: @sizes[maxSM]) {
+      @media (max-width: @sizes[maxMD]) {
         .fontSize(35px, 48px);
       }
     }
 
-    &__img {
-      display: flex;
+    .info {
+      display: flex; 
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
+      padding: 0 16px 20px 46px;
+      grid-row-start: 3;
+      transition: @transition;
+
+      @media (max-width: @sizes[maxSM]) {
+        padding: 0 25px;
+      }  
+      
+      @media (min-width: @sizes[minLG]) {
+        opacity: 0;
+      }
+
+      &__left {
+        display: flex; 
+        gap: 30px;
+
+        @media (max-width: @sizes[maxSM]) {
+          justify-content: space-between;
+          width: 100%;
+        } 
+      }
+
+      &__right {
+        @media (max-width: @sizes[maxMD]) {
+          display: none;
+        }
+      }
+
+      &__top {
+        display: flex;
+        justify-content: flex-end;
+        padding: 20px;
+
+        @media (min-width: @sizes[maxMD]) {
+          display: none;
+        }
+      }
+
+      &__description {
+        color: @white;
+        .fontSize(23px, 32px);
+
+        @media (max-width: @sizes[maxMD]) {
+          .fontSize(16px, 22px);
+        }
+      }
+
+      &__title {
+        color: #525254;
+        .fontSize(23px, 32px);
+
+        @media (max-width: @sizes[maxMD]) {
+          .fontSize(16px, 22px);
+        }
+      }
+    }
+ 
+    &__wrap {
+      display: grid;
+      grid-auto-rows: .5fr 1fr .5fr;
       width: 100%;
       height: 100%;
       background-repeat: no-repeat;
@@ -153,7 +239,7 @@
     }
 
     &:nth-child(3n), &:nth-child(4n), &:nth-child(5n) {
-      width: 33%;
+      width: 33.3333%;
     }
 
     &:nth-child(6n) {

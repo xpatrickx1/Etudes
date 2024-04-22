@@ -29,7 +29,7 @@
             <div class="header__navigation navigation">
                 <div class="navigation__posts">
                     <?php 
-                        $categoryID = get_cat_ID ( 'projects' ); 
+                        $categoryID = get_category_by_slug( 'projects' );
                         $category = get_category($categoryID);
                         $count = $category->category_count;
                         echo $count;
