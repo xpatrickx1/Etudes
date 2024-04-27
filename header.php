@@ -38,15 +38,32 @@
 
                 <ul class="navigation__list">
 
-                    <?php if (has_nav_menu('header_menu')) :
-                        $nav_args = array(
-                            'theme_location' => 'header_menu',
-                            'container' => '',
-                            'items_wrap' => '%3$s',
-                        );
-                        wp_nav_menu($nav_args);
-                    endif; ?>
+                    <?php 
+                        if ( get_bloginfo("language") == 'en' ) : 
+                            if (has_nav_menu('header_menu')) :
+                                $nav_args = array(
+                                    'theme_location' => 'header_menu',
+                                    'container' => '',
+                                    'items_wrap' => '%3$s',
+                                );
+                                wp_nav_menu($nav_args);
+                            endif;
+                        endif; 
+                    ?>
                     
+                    <?php 
+                        if ( get_bloginfo("language") == 'ua' ) :
+                            if (has_nav_menu('header_menu_ua')) :
+                                $nav_args = array(
+                                    'theme_location' => 'header_menu_ua',
+                                    'container' => '',
+                                    'items_wrap' => '%3$s',
+                                );
+                                wp_nav_menu($nav_args);
+                            endif; 
+                        endif; 
+                    ?>
+
                 </ul>
             </div>
             

@@ -1,7 +1,7 @@
 @import "../base/fonts";
 @import '../base/variables';
 @import "../base/animation";
-@import "../libs/glitch";
+// @import "../libs/glitch";
 
 
 .about {
@@ -196,12 +196,12 @@
 
         &__icon {
             position: relative;
-            max-height: 466px;
+            min-height: 466px;
             height: 100%;
             overflow: hidden;
 
-            img {
-                filter: grayscale(1);
+            @media (max-width: @sizes[maxLG]) {
+                min-height: 340px;
             }
         }
 
@@ -219,5 +219,41 @@
              padding-bottom: 10px;
             }
         }
+
+        video, img {
+            transition: @transition;
+        }
+
+        video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            transform: translate(-50%, -50%);
+        }
+
+        img {
+            position: absolute;
+            opacity: 0;
+        }
+
+        @media (min-width: @sizes[minLG]) {
+            &:hover {
+                video {
+                    opacity: 0;
+                }
+    
+                img {
+                    opacity: 1;
+                }
+            }
+        }
+
+        
     }
+
+    // .item:not(:nth-child(1)) {
+    //     display: none;
+    // }
 }
