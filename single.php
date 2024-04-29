@@ -15,7 +15,7 @@
                     type='video/mp4'>
                 </video>
             </div> 
-
+            <div class="video__sound"></div>
             <div class="watch">
                 <div id="watch">00:00:000</div>
             </div>

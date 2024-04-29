@@ -8,7 +8,7 @@
             loop 
             playsinline 
             controls="false" 
-            src='<?= bloginfo('template_url') . '/images/home.mp4' ?>' 
+            src='<?= get_field( 'home_video' )['url'] ?>' 
             type='video/mp4'>
         </video> 
     </div> 

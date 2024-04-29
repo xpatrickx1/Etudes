@@ -41,6 +41,13 @@
 
         a {
          color: @accent;   
+         transition: @transition;
+
+            @media (min-width: @sizes[minLG]) {
+                &:hover {
+                    color: #9c1623;
+                }   
+            }
         }
     }
 
