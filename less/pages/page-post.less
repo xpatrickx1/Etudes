@@ -37,14 +37,29 @@
     .info {
       &__main {
         display: flex;
-        gap: 40px;
+        gap: 30px;
         margin-bottom: 95px;
-  
+
+        @media (min-width: @sizes[minXS]) {
+          gap: 40px;
+        }
+
         &--mobile {
           margin-bottom: 40px;
   
           @media (min-width: @sizes[minSMPlus]) {
             display: none;
+          }
+
+          .info__description, .info__title {
+            
+            @media (max-width: @sizes[maxSM]) {
+              .fontSize(20px, 26px);
+            }
+            
+            @media (max-width: @sizes[maxXS]) {
+              .fontSize(17px, 23px);
+            }
           }
         }
   
@@ -53,6 +68,8 @@
             display: none;
           }
         }
+
+        
       }
   
       &__rows {
@@ -63,7 +80,7 @@
   
       &__title, &__description {
         .fontSize(24px, 32px);
-        letter-spacing: 0.1;
+        letter-spacing: 0.01em;
       }
   
       &__title {

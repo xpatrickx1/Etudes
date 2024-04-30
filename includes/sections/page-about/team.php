@@ -15,28 +15,23 @@
                     while ( have_rows('team_list')) : the_row(); ?>
 
                         <div class="team__item item">
-                            <div class="item__icon">
-                                <img src="<?= get_sub_field('persone_photo')['url'];?>" >
-                                <video 
-                                    autoplay  
-                                    playsinline
-                                    muted
-                                    loop
-                                    src='<?= get_sub_field('persone_glitch')['url']; ?>' 
-                                    type='video/webm'>
-                                </video>
-
-                           <!-- <div class="glitch">
-                                <div class="glitch__img" style="background-image: url( <?= get_sub_field('persone_photo')['url'];?> )"></div>
-                                <div class="glitch__img" style="background-image: url(<?= get_sub_field('persone_photo')['url'];?>)"></div>
-                                <div class="glitch__img" style="background-image: url(<?= get_sub_field('persone_photo')['url'];?>)"></div>
-                                <div class="glitch__img" style="background-image: url(<?= get_sub_field('persone_photo')['url'];?>)"></div>
-                                <div class="glitch__img" style="background-image: url(<?= get_sub_field('persone_photo')['url'];?>)"></div>
-                            </div>-->
+                            <div class="item__icon" 
+                                style="background-image: url(<?= get_sub_field('persone_photo')['url'];?>)">
                             </div>
-                            <div class="item__name"><?= get_sub_field('persone_name') ?></div>
 
-                            <div class="item__position"><?= get_sub_field('persone_position') ?></div>
+                            <div class="item__bottom">
+
+                                <div class="item__firstname">
+                                    <?= get_sub_field('persone_firstname') ?>
+                                </div>
+
+                                <div class="item__lastname">
+                                    <?= get_sub_field('persone_lastname') ?>
+                                </div>
+
+                                <div class="item__position"><?= get_sub_field('persone_position') ?></div>
+                                
+                            </div>
 
                         </div>
 
