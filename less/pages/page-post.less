@@ -16,7 +16,7 @@
 
     .top-screen__top {
       position: relative;
-      max-width: 1500px;
+      // max-width: 1500px;
       margin: 0 auto;
     }
   
@@ -99,12 +99,27 @@
 
       @media ( min-width: @sizes[ minMD ] ) {
         min-height: 600px;
-        max-width: 1520px;
         margin: 0 auto;
       }
 
       @media ( min-width: @sizes[ minLG ] ) {
         min-height: 720px;
+      }
+
+      @media ( min-width: @sizes[ minFullHD ] ) {
+        min-height: 1080px;
+      }
+
+      @media ( min-width: 2560px ) {
+        min-height: 1440px;
+      }
+
+      @media ( min-width: 3840px ) {
+        min-height: 2160px;
+      }
+
+      @media ( min-width: 7680px ) {
+        min-height: 4320px;
       }
     }
   
@@ -160,20 +175,42 @@
   @media (min-width: 1500px) {
       bottom: 70px;
   }
+
+  @media ( min-width: 2560px ) {
+    bottom: 100px;
+  }
+
+  @media ( min-width: 3840px ) {
+    bottom: 120px;
+  }
+
+  @media ( min-width: 7680px ) {
+    bottom: 140px;
+  }
   
 }
 
 .video__sound {
   @media (max-width: @sizes[maxSM]) {
     bottom: 45px;
-}
+  }
 
-@media (min-width: @sizes[minMD]) {
-    bottom: 60px;
-    left: 70px;
-}
+  @media (min-width: @sizes[minMD]) {
+      bottom: 60px;
+  }
 
-@media (min-width: 1500px) {
-    bottom: 80px;
-}
+  @media (min-width: 1500px) {
+      bottom: 80px;
+  }
+  @media ( min-width: 2560px ) {
+    bottom: 100px;
+  }
+
+  @media ( min-width: 3840px ) {
+    bottom: 120px;
+  }
+
+  @media ( min-width: 7680px ) {
+    bottom: 140px;
+  }
 }
