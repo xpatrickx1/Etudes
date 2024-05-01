@@ -220,6 +220,7 @@
            
 
             svg path {
+                fill: #9e9e9e;
                 transition: @transition;
             }
             
@@ -228,6 +229,31 @@
                     fill: @accent;
                 }
             }
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media screen and (max-width: @sizes[maxSM]) {
+            flex-direction: column;
+          }
+    }
+
+    .copyright {
+        color: #9e9e9e;
+        .fontSize(15px, 20px);
+
+        @media screen and (max-width: @sizes[maxSM]) {
+            padding-bottom: 15px;
+        }
+    }
+    
+    .author {
+        @media screen and (max-width: @sizes[maxSM]) {
+            padding-bottom: 15px;
         }
     }
 }

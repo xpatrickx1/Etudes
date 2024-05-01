@@ -16,6 +16,8 @@
 
     .top-screen__top {
       position: relative;
+      max-width: 1500px;
+      margin: 0 auto;
     }
   
     &__wrap {
@@ -56,7 +58,7 @@
             @media (max-width: @sizes[maxSM]) {
               .fontSize(20px, 26px);
             }
-            
+
             @media (max-width: @sizes[maxXS]) {
               .fontSize(17px, 23px);
             }
@@ -143,3 +145,35 @@
     }
     
   }
+
+
+.watch {
+
+  @media (max-width: @sizes[maxSM]) {
+      bottom: 45px;
+  }
+
+  @media (min-width: @sizes[minMD]) {
+      bottom: 50px;
+  }
+
+  @media (min-width: 1500px) {
+      bottom: 70px;
+  }
+  
+}
+
+.video__sound {
+  @media (max-width: @sizes[maxSM]) {
+    bottom: 45px;
+}
+
+@media (min-width: @sizes[minMD]) {
+    bottom: 60px;
+    left: 70px;
+}
+
+@media (min-width: 1500px) {
+    bottom: 80px;
+}
+}

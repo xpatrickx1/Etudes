@@ -9,8 +9,8 @@ function fadeInPage() {
 
 document.addEventListener('DOMContentLoaded', function() {
     if (!window.AnimationEvent) { return; }
-    const anchors = document.querySelectorAll('.navigation__list a');
-        
+    const anchors = document.querySelectorAll('.navigation__list a, .cd-about a');
+    console.log(anchors);
     anchors.forEach( (i) => {i.addEventListener('click', function(event) {
         fadeInPage();
         const fader = document.querySelector('main'),

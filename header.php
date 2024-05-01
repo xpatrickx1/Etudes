@@ -16,7 +16,7 @@
     <div class="container">
         <div class="header__wrap">
 
-            <a href="/sfera/" class="header__logo logo">
+            <a href="/" class="header__logo logo">
                 <div class="logo__desktop">
                     <img src="<?= bloginfo('template_url') . '/images/icons/logo.svg' ?>"
                             alt="Back to homepage logo link"
@@ -27,7 +27,7 @@
             </a>
 
             <div class="header__navigation navigation">
-                <div class="navigation__posts">
+                <div class="navigation__posts <?= get_bloginfo("language") == 'ua' ? 'navigation__posts--ua' : 'navigation__posts--en'?>" >
                     <?php 
                         $categoryID = get_category_by_slug( 'projects' );
                         $category = get_category($categoryID);

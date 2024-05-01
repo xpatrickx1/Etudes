@@ -88,11 +88,12 @@ add_action( 'wp_enqueue_scripts', 'ox_adding_scripts' );
 //--------------------------------------------------
 //render-blocking styles
 $css_files = array(
+    'front',
     'main',
     'page-about',
-    'page-blog',
-    'page-news',
     'page-contacts',
+    'page-news',
+    'page-blog',
 );
 
 add_action('wp_enqueue_scripts', 'ox_adding_critical_css');
@@ -124,8 +125,8 @@ function ox_adding_critical_css()
         "front-page" => "front",
         "page-about" => "about",
         "page-contacts" => "contacts",
-        "page-blog" => "blog",
         "page-news" => "news",
+        "page-blog" => "projects",
     );
     $currentPageTemplate = get_page_template_slug();
     $currentPageTemplateName = str_replace(['pages/', '.php'], '', $currentPageTemplate);
@@ -137,6 +138,16 @@ function ox_adding_critical_css()
             echo '<style>' . $currentCritical . '</style>';
         }
         $counter = $counter + 1;
+    }
+
+    if( $_SERVER['REQUEST_URI'] === '/news/' ) {
+        $currentCritical = load_template_part("css/critical-news.css");
+        echo '<style>' . $currentCritical . '</style>';
+    }
+
+    if( $_SERVER['REQUEST_URI'] === '/projects/' ) {
+        $currentCritical = load_template_part("css/critical-projects.css");
+        echo '<style>' . $currentCritical . '</style>';
     }
 
     global $css_files;
