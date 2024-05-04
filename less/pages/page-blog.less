@@ -62,6 +62,10 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+
+    @media (max-width: @sizes[maxSM]) {
+      gap: 1rem;
+    }
   }
 
   .blog__group {
@@ -70,7 +74,7 @@
     
     @media (max-width: @sizes[maxSM]) {
       gap: 1rem;
-     }
+    }
   }
 
   .item {
@@ -245,6 +249,12 @@
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
+      
+
+      @media (max-width: @sizes[maxLG]) {
+        grid-auto-rows: 1.5fr .5fr .8fr;
+        box-shadow: inset 0 -260px 85px -110px rgba(0,0,0,.75);
+      }
     }
 
     @media (max-width: @sizes[maxMD]) {

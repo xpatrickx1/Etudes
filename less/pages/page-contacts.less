@@ -215,19 +215,15 @@
         gap: 36px;
         padding: 18px 0 21px;
         
-        &__item {
+        &__item a {
             cursor: pointer;
-           
+            .fontUnbounded();
+            .fontSize(16px, 20px);
+            color: #9e9e9e;
+            transition: color .3s;
 
-            svg path {
-                fill: #9e9e9e;
-                transition: @transition;
-            }
-            
             &:hover, &:active {
-                svg path {
-                    fill: @accent;
-                }
+                color: @accent;
             }
         }
     }
