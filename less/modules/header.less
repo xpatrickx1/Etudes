@@ -4,9 +4,6 @@
   top: 0;
   left: 0;
   padding: 16px 0;
-  z-index: 100;
-  background: #000;
-
 
   &__wrap{
     min-height: 40px;
@@ -46,15 +43,6 @@
     opacity: .5;
     font-family: @fontBold;
     .fontSize(20px, 28px);
-
-    &--ua {
-      left: 108px;
-    }
-    
-    &--en {
-      left: 120px;
-    }    
-
   }
 
   &__link{
@@ -69,7 +57,7 @@
 
   &__link > a,
   &__link > span{
-    color: white;
+    color: @black;
     font-size: 24px;
     line-height: 33px;
     font-family: @fontBold;

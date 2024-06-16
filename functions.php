@@ -140,12 +140,12 @@ function ox_adding_critical_css()
         $counter = $counter + 1;
     }
 
-    if( $_SERVER['REQUEST_URI'] === '/news/' ) {
+    if( $_SERVER['REQUEST_URI'] === '/news/' || $_SERVER['REQUEST_URI'] === '/ua/news/' ) {
         $currentCritical = load_template_part("css/critical-news.css");
         echo '<style>' . $currentCritical . '</style>';
     }
 
-    if( $_SERVER['REQUEST_URI'] === '/projects/' ) {
+    if( $_SERVER['REQUEST_URI'] === '/projects/' || $_SERVER['REQUEST_URI'] === '/ua/projects/') {
         $currentCritical = load_template_part("css/critical-projects.css");
         echo '<style>' . $currentCritical . '</style>';
     }
