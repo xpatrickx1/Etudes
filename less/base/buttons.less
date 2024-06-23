@@ -37,4 +37,69 @@
     border-color: @mainBtnHover;
     color: @mainBtnColor;
   }
+
+  &__primary {
+    background: @background[btnPrimary];
+    color: @white;
+    border-radius: @border[buttonRadius];
+
+    &:hover {
+      background-color: @background[btnPrimaryHover];
+      border-color: @mainBtnHover;
+      color: @black;
+    }
+    
+    &:focus,
+    &:active {
+      box-shadow: none;
+      background-color: @background[btnPrimaryHover];
+      border-color: @mainBtnHover;
+      color: @black;
+    }
+  }
+}
+
+
+.buttonMain( @width: 129px ) {
+  position: relative;
+  outline: none;
+  .font(400);
+  .fontSize(16px, 28px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: @width;
+  width: 100%;
+  padding: 10px 20px;
+  transition: @transition;
+  background: @background[btnPrimary];
+  color: @white;
+  border-radius: @border[buttonRadius];
+  box-shadow: none;
+  cursor: pointer;
+
+  &:hover {
+    @media ( min-width: @sizes[ minLG ] ) {
+      background-color: @background[btnPrimaryHover];
+      border-color: @mainBtnHover;
+      color: @black;
+    }
+  }
+  
+  &:active {
+    box-shadow: none;
+    background-color: @background[btnPrimaryHover];
+    border-color: @mainBtnHover;
+    color: @black;
+  }
+  
+
+}
+
+
+.button {
+  &--main {
+    .buttonMain();
+  }
+
 }

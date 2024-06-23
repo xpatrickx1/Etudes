@@ -90,10 +90,10 @@ add_action( 'wp_enqueue_scripts', 'ox_adding_scripts' );
 $css_files = array(
     'front',
     'main',
-    'page-about',
-    'page-contacts',
-    'page-news',
-    'page-blog',
+    // 'page-about',
+    // 'page-contacts',
+    // 'page-news',
+    // 'page-blog',
 );
 
 add_action('wp_enqueue_scripts', 'ox_adding_critical_css');

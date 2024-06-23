@@ -1,0 +1,26 @@
+.top-screen {
+    &__img {
+        position: relative;
+    
+        @media ( max-width: @sizes[ maxLG ] ) {
+          width: 100%;
+        }
+      }
+
+      img {
+        position: absolute;
+        z-index: -1;
+      }
+
+      .top-screen--desktop {
+        @media ( max-width: @sizes[ maxSM ] ) {
+          display: none;
+        }
+      }
+  
+      .top-screen--mobile {
+        @media ( min-width: @sizes[ minSM ] ) {
+          display: none;
+        }
+      }
+}

@@ -26,48 +26,25 @@
                 </div>
             </a>
 
-            <div class="header__navigation navigation">
-                <div class="navigation__posts <?= get_bloginfo("language") == 'ua' ? 'navigation__posts--ua' : 'navigation__posts--en'?>" >
-                    <?php 
-                        $categoryID = get_category_by_slug( 'projects' );
-                        $category = get_category($categoryID);
-                        $count = $category->category_count;
-                        echo $count;
-                    ?>
-                </div>
-
-                <ul class="navigation__list">
+            <ul class="header__navigation navigation">
 
                     <?php 
-                        if ( get_bloginfo("language") == 'en' ) : 
-                            if (has_nav_menu('header_menu')) :
-                                $nav_args = array(
-                                    'theme_location' => 'header_menu',
-                                    'container' => '',
-                                    'items_wrap' => '%3$s',
-                                );
-                                wp_nav_menu($nav_args);
-                            endif;
-                        endif; 
-                    ?>
-                    
-                    <?php 
-                        if ( get_bloginfo("language") == 'ua' ) :
-                            if (has_nav_menu('header_menu_ua')) :
-                                $nav_args = array(
-                                    'theme_location' => 'header_menu_ua',
-                                    'container' => '',
-                                    'items_wrap' => '%3$s',
-                                );
-                                wp_nav_menu($nav_args);
-                            endif; 
+                        if (has_nav_menu('header_menu')) :
+                            $nav_args = array(
+                                'theme_location' => 'header_menu',
+                                'container' => '',
+                                'items_wrap' => '%3$s',
+                            );
+                            wp_nav_menu($nav_args);
                         endif; 
                     ?>
 
-                </ul>
-            </div>
+            </ul>
             
-            <?php if ( function_exists ( 'wpm_language_switcher' ) ) wpm_language_switcher (); ?>
+            
+            <div class="header__buttons">
+                <a href="#" class="button--main">Contact Us</a>
+            </div>
 
             <div class="header__hamburger js-hamburger">
                 <div class="hamburger-line1"></div>

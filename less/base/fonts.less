@@ -1,39 +1,19 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:700,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
-@font-face { 
-  font-family: BerlinTypeOffice-Regular; 
-  src: url(./../fonts/BerlinTypeOffice-Regular.ttf); 
-  font-weight: normal; 
-}
-
-@font-face { 
-  font-family: BerlinTypeOffice-Bold; 
-  src: url(./../fonts/BerlinTypeOffice-Bold.ttf); 
-  font-weight: normal; 
-}
-
-@font-face { 
-  font-family: digital; 
-  src: url(./../fonts/digital.ttf); 
-  font-weight: normal; 
-}
-
-@fontFamily : 'BerlinTypeOffice-Regular', sans-serif;
-@fontBold : 'BerlinTypeOffice-Bold', sans-serif;
-@fontDigital : 'digital', sans-serif;
+@fontFamily : 'Zen Old Mincho', sans-serif;
 
 .fontSize( @size, @lineHeight ) {
     font-size: @size;
     line-height: @lineHeight;
   }
 
-.font( @fontWeight: 400 ) {
+.fontZen( @fontWeight: 500 ) {
   font-family: @fontFamily;
   font-weight: @fontWeight;
 }
 
-.fontUnbounded( @fontWeight: 300 ) {
-  font-family: 'Unbounded';
+.font( @fontWeight: 400 ) {
+  font-family: 'Open Sans';
   font-weight: @fontWeight;
 }
