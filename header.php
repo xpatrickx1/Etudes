@@ -17,13 +17,11 @@
         <div class="header__wrap">
 
             <a href="/" class="header__logo logo">
-                <div class="logo__desktop">
-                    <img src="<?= bloginfo('template_url') . '/images/icons/logo.svg' ?>"
-                            alt="Back to homepage logo link"
-                            width="109px"
-                            height="64px"
-                    >
-                </div>
+                <img src="<?= bloginfo('template_url') . '/images/icons/logo.svg' ?>"
+                        alt="Back to homepage logo link"
+                        width="140px"
+                        height="60px"
+                >
             </a>
 
             <ul class="header__navigation navigation">

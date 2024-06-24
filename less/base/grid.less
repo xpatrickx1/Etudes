@@ -1,11 +1,14 @@
 .container{
-  max-width: 1500px;
-  padding: 0 50px;
+  max-width: 1272px;
+  padding: 0;
   width: 100%;
   margin: 0 auto;
 
   @media ( max-width: @sizes[ maxLG ] ) {
-    padding: 0 20px;
+    max-width: 768px;
   }
 
+  @media ( max-width: @sizes[ maxSM ] ) {
+    padding: 0 18px;
+  }
 }

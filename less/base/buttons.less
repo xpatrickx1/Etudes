@@ -92,6 +92,43 @@
     border-color: @mainBtnHover;
     color: @black;
   }
+}
+
+.buttonArrow( @width: 129px ) {
+  position: relative;
+  outline: none;
+  .font(400);
+  .fontSize(16px, 24px);
+  color: @black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: @width;
+  width: 100%;
+  transition: @transition;
+  box-shadow: none;
+  cursor: pointer;
+
+  &:hover {
+    @media ( min-width: @sizes[ minLG ] ) {
+      background-color: @background[btnPrimaryHover];
+      border-color: @mainBtnHover;
+      color: @black;
+    }
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    background: #000;
+  }
+  
+  &:active {
+    box-shadow: none;
+    background-color: @background[btnPrimaryHover];
+    border-color: @mainBtnHover;
+    color: @black;
+  }
   
 
 }
@@ -100,6 +137,10 @@
 .button {
   &--main {
     .buttonMain();
+  }
+
+  &--arrow {
+    .buttonArrow();
   }
 
 }

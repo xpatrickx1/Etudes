@@ -1,11 +1,20 @@
 .section-title,
 h1 {
   color: @title;
-  font-size: 34px;
+  font-size: 106px;
   font-family: 'Zen Old Mincho', sans-serif;
-  font-weight: 900;
-  line-height: 1.18;
-  margin: 0 0 40px;
+  font-weight: 500;
+  line-height: 136px;
+
+  @media ( min-width: @sizes[ minSM ] ) and ( max-width: @sizes[ maxLG ] ) {
+    font-size: 66px;
+    line-height: 72px;
+  }
+
+  @media ( max-width: @sizes[ maxSM ] ) {
+    font-size: 40px;
+    line-height: 48px;
+  }
 }
 
 .section-title {
@@ -30,7 +39,7 @@ h2, h3, h4 {
 
 p {
   margin: 0 0 20px;
-  color: @white;
+  color: @black;
 }
 
 ul, ol {
@@ -52,6 +61,14 @@ a {
   }
 }
 
+
+@media screen and (max-width: 1170px) {
+
+  h1 {
+    font-size: 66px;
+    margin: 0 0 30px;
+  }
+}
 
 @media screen and (max-width: 767px) {
 

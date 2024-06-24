@@ -1,26 +1,193 @@
 .top-screen {
-    &__img {
-        position: relative;
+  position: relative;
+  
+  @lineHeight : 84px;
+  @lineHeightTab : 60px;
+  @lineHeightMob : 24px;
+
+  @media ( max-width: @sizes[ maxLG ] ) {
+    @lineHeight : 60px;
+  }
+
+  @media ( min-width: @sizes[ minLG ] ) {
+    @lineHeight : 84px;
+  }
+  
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    background: @accent;
+    height: @lineHeight;
+    width: calc( (100% - @sizes[minLG]) / 2);
+    left: 0;
+
+    @media ( max-width: @sizes[ maxLG ] ) {
+      width: calc( (100% - @sizes[minSM]) / 2);
+      height: @lineHeightTab;
+    }
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+      height: @lineHeightMob;
+    }
+  }
+
+  &:before {
+    top: @lineHeight * 3;
+
+    @media ( max-width: @sizes[ maxLG ] ) {
+      top: @lineHeightTab * 3;
+    }
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+      top: @lineHeightMob *3;
+    }
+  }
+  &:after {
+    top: @lineHeight * 5;
+
+    @media ( max-width: @sizes[ maxLG ] ) {
+      top: @lineHeightTab * 5;
+    }
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+      top: @lineHeightMob * 5;
+    }
+  }
+
+  &__line {
+    position: absolute;
+    background: @accent;
+    height: @lineHeight;
+    width: 50%;
+    left: 0;
+    top: @lineHeight;
+
+    @media ( max-width: @sizes[ maxLG ] ) {
+      height: @lineHeightTab;
+      top: @lineHeightTab;
+      max-width: 368px;
+    }
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+      height: @lineHeightMob;
+      top: @lineHeightMob;
+      max-width: 124px;
+    }
+  }
+
+  .container {
+    position: relative;
     
-        @media ( max-width: @sizes[ maxLG ] ) {
-          width: 100%;
-        }
+    &:before {
+      content: '';
+      position: absolute;
+      background: @accent;
+      height: 84px;
+      width: calc( (100% - @sizes[minLG]) / 2);
+      left: 0;
+    }
+  }
+
+  #bg-image {
+    background-image: url( '../images/page-front/top-screen.webp' );
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @media ( max-width: @sizes[ maxLG ] ) {
+      background-image: url( '../images/page-front/top-screen--tablet.webp' );
+    }
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+      background-image: url( '../images/page-front/top-screen--mob.webp' );
+    }
+  }
+
+
+  &__img {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      z-index: -1;
+  
+      @media ( max-width: @sizes[ maxLG ] ) {
+        width: 100%;
+      }
+
+      @media ( min-width: @sizes[ minLG ] ) {
+        min-height: 588px;
+        
       }
 
       img {
         position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
         z-index: -1;
+        width: 100%;
       }
+  }
 
-      .top-screen--desktop {
-        @media ( max-width: @sizes[ maxSM ] ) {
-          display: none;
-        }
-      }
+  h1 {
+    z-index: 3;
+    margin: 0 0 84px 84px;
+
+    @media ( min-width: @sizes[ minSM ] ) and ( max-width: @sizes[ maxLG ] ) {
+      margin: 0 0 96px 66px;
+    }
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+      margin: 0 44px 44px;
+    }
+  }
+
+  .top-screen--desktop {
+    @media ( max-width: @sizes[ maxSM ] ) {
+      display: none;
+    }
+  }
   
-      .top-screen--mobile {
-        @media ( min-width: @sizes[ minSM ] ) {
-          display: none;
-        }
-      }
+  .top-screen--mobile {
+    @media ( min-width: @sizes[ minSM ] ) {
+      display: none;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    padding-top: 36px;
+
+    @media ( min-width: @sizes[ minSM ] ) {
+      padding-top: 48px;
+      flex-direction: row;
+    }
+
+    @media ( min-width: @sizes[ minLG ] ) {
+      padding-top: 84px;
+    }
+  }
+
+  &__right {
+    display: flex;
+  }
+
+  &__info {
+    max-width: 370px;
+    padding-left: 24px;
+    .fontSize(16px, 24px);
+    color: @black;
+  }
+
+  .button__arrow {
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+    }
+  }
+  
 }
