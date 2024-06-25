@@ -47,17 +47,24 @@
     }
 
     &__list {
-        // display: flex;
-        // flex-direction: column;
+        display: flex;
+        flex-direction: column;
 
         @media ( min-width: @sizes[ minSM ] ) {
            flex-direction: row;
-           flex-wrap: wrap;
-           justify-content: center;
+           flex-wrap: nowrap;
+            gap: 18px;
         }
 
         @media ( min-width: @sizes[ minLG ] ) {
             flex-wrap: nowrap;
+            gap: 24px;
+        }
+    }
+
+    .items__group {
+        @media ( min-width: @sizes[ minSM ] ) {
+            width: 48%;
         }
     }
 

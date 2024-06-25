@@ -1,51 +1,73 @@
+function groupItems (parentContainer, itemsInGrop) {
+    let newHtml = '';
+    [...document.querySelectorAll(`${parentContainer} .item`)]
+        .reduce((accumulator, currentValue, currentIndex, array) => {
+            if (currentIndex % itemsInGrop === 0) {
+                accumulator.push(array.slice(currentIndex, currentIndex + itemsInGrop));
+            }
+            return accumulator;
+        }, [])
+        .forEach(p => {
+            let newGroup = '';
 
-[...document.querySelectorAll('.program__item')]
-    .reduce((accumulator, currentValue, currentIndex, array) => {
-        if (currentIndex % 4 === 0) {
-            accumulator.push(array.slice(currentIndex, currentIndex + 4));
-        }
-        return accumulator;
-    }, [])
-    .forEach(p => {
-        let newGroup = '';
-        if (p[0].outerHTML !== 'undefined') {
-            newGroup += p[3].outerHTML;
-        }
-        console.log(newGroup);
-        // let new_html = '<div class=\'program__group\'>' + p[0].outerHTML + p[1].outerHTML + p[2].outerHTML + p[3].outerHTML + '</div>';
-        // document.querySelector('.program__list').innerHTML = new_html;
+            p.forEach( item => {
+                if (item.outerHTML !== 'undefined') {
+                    newGroup += item.outerHTML;
+                }
+            });
+        
+            newHtml += '<div class=\'items__group\'>' + newGroup + '</div>';
+        });
+
+    document.querySelector('.program__list').innerHTML = newHtml;
+
+}
+
+
+const changeColumsCount = () => {
+    const windowWidth = $( window ).width();
+
+    if( windowWidth < 768 ) {
+        groupItems('.program__list', 4);
+    } else {
+        console.log(1);
+        groupItems('.program__list', 7);
+    }
+};
+
+$( window ).resize( () => { changeColumsCount(); });
+changeColumsCount();
+
+
+$('.program__slider')
+
+    .slick({
+        infinite: true,
+        speed: 300,
+        centerMode: false,
+        // variableWidth: true,
+        arrows: false,
+        slidesToScroll: 1,
+        prevArrow: '<button class="slick-prev slick-arrow arrow--main" aria-label="Previous" type="button"></button>',
+        nextArrow: '<button class="slick-next slick-arrow arrow--main" aria-label="Next" type="button"></button>',
+        dots: true,
+        responsive: [
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 1,
+                }
+            },
+            {
+                breakpoint: 9999,
+                settings: 'unslick',
+            },
+        ]
+    })
+
+    .on('afterChange', e => {
+        $(window).scroll();
     });
-
-
-// $('.program__slider')
-
-//     .slick({
-//         infinite: true,
-//         speed: 300,
-//         centerMode: false,
-//         // variableWidth: true,
-//         arrows: false,
-//         slidesToScroll: 1,
-//         prevArrow: '<button class="slick-prev slick-arrow arrow--main" aria-label="Previous" type="button"></button>',
-//         nextArrow: '<button class="slick-next slick-arrow arrow--main" aria-label="Next" type="button"></button>',
-//         dots: true,
-//         responsive: [
-//             {
-//                 breakpoint: 767,
-//                 settings: {
-//                     slidesToShow: 1,
-//                 }
-//             },
-//             {
-//                 breakpoint: 9999,
-//                 settings: 'unslick',
-//             },
-//         ]
-//     })
-
-//     .on('afterChange', e => {
-//         $(window).scroll();
-//     });
 
 
 // <!-- <?php foreach ( array_chunk($program, 4) as $key => $group ) : ?> -->
