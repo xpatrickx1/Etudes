@@ -1,6 +1,15 @@
 .top-screen {
   position: relative;
+  padding: 48px 0;
   
+  @media ( min-width: @sizes[ minSM ] ) {
+    padding: 60px 0;
+  }
+
+  @media ( min-width: @sizes[ minLG ] ) {
+    padding: 120px 0;
+  }
+
   @lineHeight : 84px;
   @lineHeightTab : 60px;
   @lineHeightMob : 24px;
