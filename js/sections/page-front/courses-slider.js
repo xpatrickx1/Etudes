@@ -2,10 +2,10 @@
 $('.courses__slider')
 
     .slick({
-        infinite: true,
+        infinite: false,
         speed: 300,
         centerMode: false,
-        // variableWidth: true,
+        variableWidth: true,
         arrows: true,
         slidesToScroll: 1,
         prevArrow: '<button class="slick-prev slick-arrow arrow--main" aria-label="Previous" type="button"></button>',

@@ -1,0 +1,131 @@
+.recent-post {
+  padding: 100px 0;
+
+  @media ( max-width: @sizes[ maxSM ] ) {
+    padding: 80px 0;
+  }
+
+  &__title {
+    .font( 700 );
+    .fontSize( 50px, 58px );
+    margin: 0 auto 40px;
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+      .fontSize( 28px, 33px );
+      margin: 0 auto 20px;
+    }
+
+  }
+
+  &__wrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+
+    @media ( max-width: @sizes[ maxMD ] ) {
+      grid-gap: 20px;
+    }
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+      grid-template-columns: 1fr;
+    }
+
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    min-height: 430px;
+
+
+    &:nth-child( 3 ) {
+      @media ( min-width: @sizes[ minSM ] ) and ( max-width: @sizes[ maxMD ] ) {
+        display: none;
+      }
+    }
+
+  }
+
+  &__thumbnail {
+    overflow: hidden;
+    position: relative;
+    height: 200px;
+  }
+
+  .item__img {
+    position: absolute;
+    height: auto;
+    width: auto;
+    max-height: 200px;
+    max-width: 600px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .item__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding: 20px;
+  }
+
+  .item__read {
+    display: flex;
+    align-items: center;
+    .font();
+    .fontSize(14px, 21px);
+    margin-right: 40px;
+
+    svg {
+      margin-right: 5px;
+    }
+  }
+
+  .item__title {
+    display: block;
+    .font(700);
+    .fontSize(20px, 28px);
+    margin: 15px 0 30px;
+    height: 100%;
+  }
+
+  .item--bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+  }
+
+  .item__date {
+    .font();
+    .fontSize(14px, 21px);
+  }
+
+  .item__views {
+    display: flex;
+    align-items: center;
+    .font();
+    .fontSize(14px, 21px);
+
+    svg {
+      margin-right: 5px;
+    }
+  }
+
+  .slick-track {
+    display: flex;
+    gap: 15px;
+  }
+
+  .slick-next.arrow--main {
+    left: calc(50% + 30px);
+  }
+
+  .slick-prev.arrow--main {
+    left: calc(50% - 100px);
+
+  }
+}

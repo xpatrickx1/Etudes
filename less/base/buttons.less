@@ -94,6 +94,60 @@
   }
 }
 
+.buttonSecondary( @width: 175px ) {
+  position: relative;
+  outline: none;
+  .font(400);
+  .fontSize(16px, 25.5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: @width;
+  width: 100%;
+  padding: 10px 20px;
+  transition: @transition;
+  background: transparent;
+  border: 1px solid @background[btnPrimary];
+  color: @background[btnPrimary];
+  border-radius: @border[buttonRadius];
+  box-shadow: none;
+  cursor: pointer;
+
+  &:after {
+    display: none;
+  }
+
+  &:hover {
+    @media ( min-width: @sizes[ minLG ] ) {
+      border: 1px solid @background[btnPrimaryHover];
+      background: @background[btnPrimaryHover];
+      color: @black;
+      padding: 10px 44px 10px 20px;
+      max-width: 207px;
+
+      &:after {
+        content: '';
+        position: absolute;
+        display: block;
+        background-image: url("data:image/svg+xml,%3Csvg width='20' height='12' viewBox='0 0 20 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.7743 10.9853L14.6498 10.9312L14.5887 10.813L14.5276 10.6948L14.5276 10.5737L14.5276 10.4527L14.5836 10.3472L14.6397 10.2417L16.5174 8.3667L18.3951 6.4917L9.3422 6.47217L0.289306 6.45264L0.205947 6.39725L0.122627 6.34186L0.0594625 6.23498L-0.00366254 6.12807L-0.00366255 6.00342L-0.00366256 5.87877L0.0629781 5.76592L0.129619 5.65311L0.254423 5.59389L0.379228 5.53467L9.39661 5.53467L18.414 5.53467L16.5139 3.63037L14.6139 1.72607L14.5707 1.64076L14.5276 1.55541L14.5276 1.43373L14.5276 1.31205L14.5845 1.20205L14.6413 1.09209L14.7836 1.02459L14.9258 0.957089L15.0685 0.983105L15.2112 1.00912L17.4908 3.28166L19.7704 5.5542L19.8834 5.70654L19.9963 5.85888L19.9963 6.00342L19.9963 6.14795L19.8834 6.30029L19.7704 6.45264L17.5103 8.70623L15.2502 10.9598L15.1403 11.0012L15.0303 11.0425L14.9645 11.041L14.8987 11.0394L14.7743 10.9853Z' fill='black'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+        background-position: center;
+        right: 24px;
+        width: 20px;
+        height: 11px;
+        transition: .7s;
+      }
+    }
+  }
+  
+  &:active {
+    box-shadow: none;
+    border: 1px solid @background[btnPrimaryActive];
+    background: @background[btnPrimaryActive];
+    color: @black;
+  }
+}
+
 .buttonArrow( @width: 129px ) {
   position: relative;
   outline: none;
@@ -141,6 +195,10 @@
 
   &--arrow {
     .buttonArrow();
+  }
+
+  &--secondary {
+    .buttonSecondary();
   }
 
 }

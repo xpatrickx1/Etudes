@@ -8,5 +8,6 @@
 <?php get_template_part('includes/sections/page-front/quote')?>
 <?php get_template_part('includes/sections/page-front/program')?>
 <?php get_template_part('includes/sections/page-front/courses')?>
+<?php get_template_part('includes/sections/page-front/recent-post')?>
 
 <?php get_footer(); ?>

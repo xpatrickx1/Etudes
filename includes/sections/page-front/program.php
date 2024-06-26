@@ -28,16 +28,3 @@
         </div>
     </div>
 </section>
-
-
- <!-- <div class="program__group"> -->
-                        <!-- <?php foreach ( $group as $item ) : ?> -->
-                            <div class="program__item item">
-                                <?= $group[ 'text' ] ?>
-                            </div>
-                        <!-- <?php endforeach; ?> -->
-                    <!-- </div> -->
-
-                    <!-- <?php if( ($key % 4) === 1 ) {
-                        // echo '</div>';
-                    } ?> -->

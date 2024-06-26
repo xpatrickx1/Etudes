@@ -13,9 +13,10 @@
     &__wrap {
         background-image: url( '../images/page-front/program/program-mob.webp' );
         background-repeat: no-repeat;
-        background-size: contain;
         border-bottom: 1px solid @border[borderPrimary];
+        background-size: cover;
         padding: 24px;
+        border-radius: 20px;
 
         @media ( min-width: @sizes[ minSM ] ) {
             background-image: url( '../images/page-front/program/program-tab.webp' );
@@ -62,7 +63,17 @@
         }
     }
 
+
+    @media ( min-width: @sizes[ minLG ] ) {
+        .items__group:nth-child(2) {
+            .item:nth-child(2) {
+                height: 108px;
+            }
+        }
+    }
+
     .items__group {
+        padding-top: 12px;
         @media ( min-width: @sizes[ minSM ] ) {
             width: 48%;
         }
@@ -88,6 +99,10 @@
             width: 24px;
             height: 24px;
             left: 24px;
+        }
+
+        &:last-child {
+            border-radius: 12px;
         }
     }
 

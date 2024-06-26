@@ -20,7 +20,6 @@ function groupItems (parentContainer, itemsInGrop) {
         });
 
     document.querySelector('.program__list').innerHTML = newHtml;
-
 }
 
 
@@ -68,11 +67,3 @@ $('.program__slider')
     .on('afterChange', e => {
         $(window).scroll();
     });
-
-
-// <!-- <?php foreach ( array_chunk($program, 4) as $key => $group ) : ?> -->
-
-//                 <!-- <?php $key++ ?> -->
-//                 <!-- <?php if( ($key % 4) === 0 ) {
-//                     // echo '<div class="program__group">';
-//                 } ?> -->
