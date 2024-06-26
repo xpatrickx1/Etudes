@@ -366,6 +366,8 @@ function display_google_map($code)
         return $code;
 }
 
+add_shortcode('random-posts', 'rand_posts');
+
 
 @ini_set( 'upload_max_size' , '256M' );
 @ini_set( 'post_max_size', '256M');
