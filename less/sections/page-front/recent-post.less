@@ -5,6 +5,10 @@
     padding: 80px 0;
   }
 
+  @media ( min-width: @sizes[ minLG ] ) {
+    padding: 120px 0;
+}
+
   &__title {
     .font( 500 );
     .fontSize( 26px, 34px );
@@ -126,7 +130,9 @@
     }
 
     @media ( min-width: @sizes[ minLG ] ) {
-      display: flex;
+        display: grid;
+        padding: 0 calc((100% - 1272px) / 2) 0;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 
     &:before, &:after {
@@ -142,7 +148,7 @@
         }
 
         @media ( min-width: @sizes[ minLG ] ) {
-            width: calc( @sizes[ minLG ] / 2 - 66px );
+            display: none;
         }
     }
 

@@ -8,7 +8,7 @@
     }
 
     @media ( min-width: @sizes[ minLG ] ) {
-        padding: 84px 0;
+        padding: 84px 0 0;
     }
 
     &__title {
@@ -63,6 +63,12 @@
             img {
                 object-fit: cover;
                 height: 100%;
+
+                @media ( min-width: @sizes[ minSM ] ) {
+                    height: auto;
+                    width: 100%;
+                }
+                
             }
 
             @media ( min-width: @sizes[ minSM ] ) {
