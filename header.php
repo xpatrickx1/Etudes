@@ -6,6 +6,7 @@
     <meta name="format-detection" content="telephone=no">
     <title><?php bloginfo('name') . ' | ' . wp_title(); ?></title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+    <style></style>
     <?php wp_head(); ?>
 </head>
 

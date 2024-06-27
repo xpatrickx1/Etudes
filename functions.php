@@ -90,9 +90,7 @@ add_action( 'wp_enqueue_scripts', 'ox_adding_scripts' );
 $css_files = array(
     'front',
     'main',
-    // 'page-about',
-    // 'page-contacts',
-    // 'page-news',
+    'page-typical',
     // 'page-blog',
 );
 
@@ -123,10 +121,7 @@ function ox_adding_critical_css()
 
     $pageTemplates = array(
         "front-page" => "front",
-        "page-about" => "about",
-        "page-contacts" => "contacts",
-        "page-news" => "news",
-        "page-blog" => "projects",
+        "page-typical" => "typical",
     );
     $currentPageTemplate = get_page_template_slug();
     $currentPageTemplateName = str_replace(['pages/', '.php'], '', $currentPageTemplate);

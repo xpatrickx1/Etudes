@@ -29,7 +29,6 @@ const changeColumsCount = () => {
     if( windowWidth < 768 ) {
         groupItems('.program__list', 4);
     } else {
-        console.log(1);
         groupItems('.program__list', 7);
     }
 };

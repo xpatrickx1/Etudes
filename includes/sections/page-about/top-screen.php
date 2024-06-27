@@ -3,6 +3,7 @@
         <div class="top-screen__wrap">
 
             <div class="top-screen__left">
+                
                 <img src="<?= bloginfo('template_url') . '/images/about/about.svg' ?>"
                     alt="about"
                     width="532"
