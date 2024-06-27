@@ -1,5 +1,5 @@
-const localDomain = 'http://localhost:8888/sfera/';
-const pathToTheme = '/wp-content/themes/Sfera/';
+const localDomain = 'http://localhost/swiss/';
+const pathToTheme = '/wp-content/themes/Etudes/';
 
 //NPM-MODULES
 const gulp = require('gulp');

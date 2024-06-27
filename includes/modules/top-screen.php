@@ -24,7 +24,7 @@
                     alt="swiss"
                     width="48px"
                     height="48px" >                
-                <div class="top-screen__info">We are a private institution located in Lausanne, canton de Vaud, which  was founded in 1977</span>
+                <div class="top-screen__info">We are a private institution located in Lausanne, canton de Vaud, which  was founded in 1977</div>
             </div>
         </div>
     </div>

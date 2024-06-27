@@ -203,7 +203,6 @@ remove_action( 'wp_head', 'wp_oembed_add_discovery_links', 10 );
 //--------------------------------------------------
 register_nav_menus( array(
     'header_menu' => 'Header Menu',
-    'header_menu_ua' => 'Header Menu UA',
     'footer_menu' => 'Footer Menu',
 ));
 
@@ -211,10 +210,6 @@ register_nav_menus( array(
 function nav_class_filter( $classes, $item, $args, $depth ) {
     //добавлять классы только для меню в хедере
     if($args->theme_location === 'header_menu' ) {
-        $classes = ['navigation__link']; //такая запись переписывает все классы для элемента меню
-    }
-
-    if($args->theme_location === 'header_menu_ua' ) {
         $classes = ['navigation__link']; //такая запись переписывает все классы для элемента меню
     }
 

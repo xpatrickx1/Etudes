@@ -15,17 +15,17 @@
             content: "";
             position: absolute;
             background: @background[bgSecondary];
-            right: 0;
+            left: 0;
             top: 0;
             height: 100%;
-            width: 65%;
+            width: 67%;
           }
     }
 
     &__wrap {
         position: relative;
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
 
         @media ( min-width: @sizes[ minSM ] ) {
             align-items: center;
@@ -40,23 +40,33 @@
     }
 
     &__top {
-        max-width: 636px;
 
         @media ( min-width: @sizes[ minSM ] ) and ( max-width: @sizes[ minLG ] ) {
             width: 100%;
         }
+
     }
 
     &__bottom {
-        margin: 24px 0 0;   
+        width: 100%;
+        border-radius: @border[buttonRadius];
+        overflow: hidden;
 
         @media ( min-width: @sizes[ minSM ] ) {
-            margin: 48px 0 0;
+            margin: 0 0 48px;
         }
 
+        
         @media ( min-width: @sizes[ minLG ] ) {
-            margin: 0;
-            max-width: 540px;
+            max-width: 636px;
+        }
+
+        img {
+            object-fit: cover;
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+            max-height: 360px;
         }
     }
 
@@ -65,11 +75,11 @@
         .fontSize(30px, 36px);
         color: @black;
         text-align: center;
-        margin: 0 0 24px;
+        margin: 36px 0 24px;
 
         @media ( min-width: @sizes[ minSM ] ) {
-            margin: 0 0 36px;
-            .fontSize(60px, 72px);
+            margin: 0 0 48px;
+            .fontSize(48px, 60px);
         }
 
         @media ( min-width: @sizes[ minLG ] ) {
@@ -84,7 +94,47 @@
 
         @media ( min-width: @sizes[ minLG ] ) {
             text-align: left;
-         }
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        max-width: 486px;
+
+        @media ( min-width: @sizes[ minSM ] ) and ( max-width: @sizes[ minLG ] ) {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        @media ( min-width: @sizes[ minLG ] ) {
+            text-align: left;
+        }
+    }
+
+    input {
+        background: @white;
+        color: @color[textSecondary];
+        border-radius: @border[buttonRadius];
+        border: 1px solid @border[borderPrimary];
+        padding: 14px 24px;
+    }
+
+    .button--main {
+        margin: 24px auto 0;
+        max-width: 180px;
+        height: 48px;
+        border-radius: @border[buttonRadius];
+
+        @media ( min-width: @sizes[ minSM ] ) {
+            margin: 48px auto 0;
+        }
+
+        @media ( min-width: @sizes[ minLG ] ) {
+            margin: 56px 0 0;
+        }
     }
 
 }
