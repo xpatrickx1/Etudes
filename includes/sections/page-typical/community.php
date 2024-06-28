@@ -25,7 +25,7 @@
                     <?= get_field('community_text') ? get_field('community_text') : 'Etudes Modernes Academy fosters relationships with global intellectual game organizations like chess, Go, and checkers. This enables students to join an intellectual community, participating in tournaments with elite representatives from different countries.' ?>
                 </div>
 
-                <div class="button--main">Contact Us</button>
+                <a href="#" class="button--main">Contact Us</a>
             </div>
             
         </div>

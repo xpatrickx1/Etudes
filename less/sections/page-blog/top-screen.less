@@ -2,6 +2,7 @@
   position: relative;
   padding: 0;
   
+  
   @media ( min-width: @sizes[ minSM ] ) {
     padding: 0 0 60px;
   }
@@ -108,20 +109,6 @@
     }
   }
 
-  #bg-image {
-    background-image: url( '../images/page-typical/typical.png' );
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    @media ( min-width: @sizes[ minSM ] ) {
-      background-image: url( '../images/page-typical/typical-tab.png' );
-    }
-
-    @media ( min-width: @sizes[ maxLG ] ) {
-      background-image: url( '../images/page-typical/typical-desk.png' );
-    }
-  }
-
   h1 {
     color: @black;
     .fontSize(30px, 36px);
@@ -147,8 +134,8 @@
   &__wrap {
       position: relative;
       display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
+      justify-content: space-between;
+      background: linear-gradient(270deg, rgba(242, 242, 237, 0) 0%, #F2F2ED 50%);
       border-radius: 24px;
       min-height: 348px;
       padding: 0 0 44px 44px;
@@ -158,15 +145,10 @@
       }
 
       @media ( min-width: @sizes[ minLG ] ) {
-        padding: 0 0 84px 84px;
+        padding: 84px;
       }
 
       img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: -1;
         width: 100%;
       }
   }
@@ -183,45 +165,46 @@
     }
   }
 
-  .top-screen--desktop {
-    @media ( max-width: @sizes[ maxSM ] ) {
-      display: none;
-    }
-  }
-  
-  .top-screen--mobile {
-    @media ( min-width: @sizes[ minSM ] ) {
-      display: none;
-    }
-  }
-
-  &__bottom {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: space-between;
-    padding-top: 36px;
-
-    @media ( min-width: @sizes[ minSM ] ) {
-      padding-top: 48px;
-      flex-direction: row;
-    }
-
-    @media ( min-width: @sizes[ minLG ] ) {
-      padding-top: 84px;
-    }
-  }
-
   &__right {
+    position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    width: 50%;
+    max-width: 480px;
   }
 
-  &__info {
-    max-width: 400px;
-    padding-left: 24px;
-    .fontSize(16px, 24px);
-    color: @black;
+  .post {
+    &__info {
+      max-width: 400px;
+      padding-left: 24px;
+      .fontSize(16px, 24px);
+      color: @black;
+      margin: 18px 0 0;
+    }
+
+    &__title {
+      .fontZen(500);
+      .fontSize(24px, 32px);
+      color: @black;
+      text-align: center;
+    }
+
+    &__img {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    &__thumbnail {
+      position: relative;
+      overflow: hidden;
+      border-radius: @border[itemRadius];
+    }
   }
+
 
   .button__arrow {
     position: relative;

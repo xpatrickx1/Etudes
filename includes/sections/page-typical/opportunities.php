@@ -5,26 +5,27 @@
 
             <div class="opportunities__top">
                 <picture class="lazy">
-                <!-- <source data-srcset="<?= bloginfo('template_url') . '/images/page-front/opportunities/opportunities-mob.png' ?>, <?= bloginfo('template_url') . '/images/page-front/opportunities/opportunities-mob-2x.png' ?> 2x" media="(max-width: 767px)"> -->
-                <!-- <source data-srcset="<?= bloginfo('template_url') . '/images/page-front/opportunities/opportunities-tab.png' ?>, <?= bloginfo('template_url') . '/images/page-front/opportunities/opportunities-tab-2x.png' ?> 2x" media="(min-width: 768px) and (max-width: 1023px)"> -->
-                <source data-srcset="<?= bloginfo('template_url') . '/images/page-front/opportunities/opportunities.png' ?>, <?= bloginfo('template_url') . '/images/page-front/opportunities/opportunities-2x.png' ?> 2x" >
+                <source data-srcset="<?= bloginfo('template_url') . '/images/page-typical/opportunities.png' ?>" media="(max-width: 767px)">
+                <source data-srcset="<?= bloginfo('template_url') . '/images/page-typical/opportunities-tab.png' ?>" media="(min-width: 768px) and (max-width: 1023px)">
+                <source data-srcset="<?= bloginfo('template_url') . '/images/page-typical/opportunities-desk.png' ?>" >
                 <img 
                     src="<?php bloginfo('template_url'); ?>/images/loader.gif"
                     width="636"
-                    height="444"
-                    class="guarantees__img"
+                    height="480"
+                    class="opportunities__img"
                 >
                 </picture>
             </div>
 
             <div class="opportunities__bottom">
                 <div class="opportunities__title">
-                    Etudes Modernes
+                    <?= get_field('opportunities_title') ? get_field('opportunities_title') : 'Unique Opportunities in Lausanne' ?>
                 </div>
                 <div class="opportunities__text">
-                    <p>Studying is based on the principals of the dual form of education in accordance with the recommendations of experts in science and business.</p>
-                    <p>Etudes Modernes SA, in collaboration with international universities, will be pleased to provide you with a personalized approach based on your abilities and goals for undergraduate, graduate and doctoral studies.</p>
+                    <?= get_field('opportunities_text') ? get_field('opportunities_text') : 'Being located in Lausanne allows students to deeply study the history of Olympic sports, as well as the technologies and solutions employed by international organizations that unite the healthy forces of humanity.' ?>
                 </div>
+
+                <a href="#" class="button--secondary">Load more</a>
             </div>
             
         </div>
