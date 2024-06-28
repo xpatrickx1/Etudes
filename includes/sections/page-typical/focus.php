@@ -17,7 +17,7 @@
 
             <div class="focus__bottom">
                 <div class="focus__title">
-                    Key Focus Areas
+                    <?= get_field('focus_title') ? get_field('focus_title') : 'Key Focus Areas' ?>
                 </div>
                 <div class="focus__text">
                     <ul>

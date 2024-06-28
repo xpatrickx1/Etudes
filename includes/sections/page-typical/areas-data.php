@@ -2,20 +2,17 @@
 
   $areas = [
     [
-      'text' => 'Convenient dual training schedule for working people',
+      'title' => 'Interaction with Leading Sports Federations',
+      'text' => 'Significant emphasis is placed on interacting with leading sports federations in Switzerland, including football, basketball, and other sports.',
     ],
     [
-      'text' => 'Programs, materials and cases created by well-known experts and practitioners',
+      'title' => 'Specialized Disciplines',
+      'text' => 'Alongside their specialized disciplines, students also focus on psychology and communications.',
     ],
     [
-      'text' => 'Independent time-flexible exam for each course',
+      'title' => 'Practical Aspects',
+      'text' => 'Students explore the practical aspects of athlete transfers and contract negotiations between sports federations in various sports (e.g., fencing, boxing).',
     ],
-    [
-      'text' => 'The opportunity to obtain a diploma from a Swiss private academy',
-    ],
-    [
-      'text' => 'All programs are adapted to the needs of the modern labor market',
-    ]
   ];
 
 ?>

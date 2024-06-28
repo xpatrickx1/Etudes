@@ -5,26 +5,27 @@
 
             <div class="community__top">
                 <picture class="lazy">
-                <!-- <source data-srcset="<?= bloginfo('template_url') . '/images/page-front/community/community-mob.png' ?>, <?= bloginfo('template_url') . '/images/page-front/community/community-mob-2x.png' ?> 2x" media="(max-width: 767px)"> -->
-                <!-- <source data-srcset="<?= bloginfo('template_url') . '/images/page-front/community/community-tab.png' ?>, <?= bloginfo('template_url') . '/images/page-front/community/community-tab-2x.png' ?> 2x" media="(min-width: 768px) and (max-width: 1023px)"> -->
-                <source data-srcset="<?= bloginfo('template_url') . '/images/page-front/community/community.png' ?>, <?= bloginfo('template_url') . '/images/page-front/community/community-2x.png' ?> 2x" >
+                <source data-srcset="<?= bloginfo('template_url') . '/images/page-typical/community.png' ?>" media="(max-width: 767px)">
+                <source data-srcset="<?= bloginfo('template_url') . '/images/page-typical/community-tab.png' ?>" media="(min-width: 768px) and (max-width: 1023px)">
+                <source data-srcset="<?= bloginfo('template_url') . '/images/page-typical/community-desk.png' ?>" >
                 <img 
                     src="<?php bloginfo('template_url'); ?>/images/loader.gif"
                     width="636"
-                    height="444"
-                    class="guarantees__img"
+                    height="480"
+                    class="community__img"
                 >
                 </picture>
             </div>
 
             <div class="community__bottom">
                 <div class="community__title">
-                    Etudes Modernes
+                    <?= get_field('community_title') ? get_field('community_title') : 'Intellectual Community' ?>
                 </div>
                 <div class="community__text">
-                    <p>Studying is based on the principals of the dual form of education in accordance with the recommendations of experts in science and business.</p>
-                    <p>Etudes Modernes SA, in collaboration with international universities, will be pleased to provide you with a personalized approach based on your abilities and goals for undergraduate, graduate and doctoral studies.</p>
+                    <?= get_field('community_text') ? get_field('community_text') : 'Etudes Modernes Academy fosters relationships with global intellectual game organizations like chess, Go, and checkers. This enables students to join an intellectual community, participating in tournaments with elite representatives from different countries.' ?>
                 </div>
+
+                <div class="button--main">Contact Us</button>
             </div>
             
         </div>

@@ -28,6 +28,23 @@ h1 {
   }
 }
 
+.section-subtitle {
+  color: @color[textSecondary];
+  .font(400);
+  .fontSize(16px, 24px);
+}
+
+.item-title {
+  color: @black;
+  .fontZen(500);
+  .fontSize(18px, 24px);
+
+  @media ( min-width: @sizes[ minSM ] ) {
+    .fontSize(20px, 24px);
+
+  }
+}
+
 h2, h3, h4 {
   margin: 0 0 20px;
   font-size: 24px;

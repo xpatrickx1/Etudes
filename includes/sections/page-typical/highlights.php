@@ -1,5 +1,17 @@
-<?php include( 'highlights-data.php' ) ?>
+<?php
 
+  $highlights = [
+    [
+      'title' => 'Sports Management Courses',
+      'text' => 'Significant time is dedicated to courses in sports management, industry marketing, recreational economics, and the basics of tourism.',
+    ],
+    [
+      'title' => 'Healthy Lifestyle Industry',
+      'text' => 'The rapidly developing healthy lifestyle industry worldwide requires high-class specialists capable of managing fitness divisions, individual and family wellness programs, and preparing wellness retreat programs.',
+    ],
+  ];
+
+?>
 <?php
     if (have_rows('highlights_list')):
         while ( have_rows('highlights_list')) : the_row();
@@ -14,13 +26,14 @@
         <div class="highlights__wrap">
 
             <div class="highlights__title">
-                <?= get_field('highlights_title') ? get_field('highlights_title') : 'The educational highlights today includes the following areas:' ?>
+                <?= get_field('highlights_title') ? get_field('highlights_title') : 'Curriculum Highlights' ?>
             </div>
 
             <div class="highlights__list highlights__list--mob highlights__slider">
                 <?php foreach ( $highlights as $key => $item ) : ?>
                             <div class="highlights__item item">
-                                <?= $item[ 'text' ] ?>
+                                <div class="item-title"><?= $item[ 'title' ] ?></div>
+                                <div class="item__text section-subtitle"><?= $item[ 'text' ] ?></div>
                             </div>
                 <?php endforeach; ?>
             </div>

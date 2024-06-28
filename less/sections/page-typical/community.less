@@ -1,5 +1,4 @@
 .community {
-    background: @background[bgSecondary];
     padding: 48px 0;
 
     @media ( min-width: @sizes[ minSM ] ) {
@@ -9,17 +8,6 @@
     @media ( min-width: @sizes[ minLG ] ) {
         position: relative;
         padding: 84px 0;
-        background: @white;
-
-        &:before {
-            content: "";
-            position: absolute;
-            background: @background[bgSecondary];
-            right: 0;
-            top: 0;
-            height: 100%;
-            width: 65%;
-          }
     }
 
     &__wrap {
@@ -33,7 +21,7 @@
         }
 
         @media ( min-width: @sizes[ minLG ] ) {
-            flex-direction: row;
+            flex-direction: row-reverse;
             align-items: center;
             justify-content: space-between;
         }
@@ -48,16 +36,9 @@
     }
 
     &__bottom {
-        margin: 24px 0 0;   
-
-        @media ( min-width: @sizes[ minSM ] ) {
-            margin: 48px 0 0;
-        }
-
         @media ( min-width: @sizes[ minLG ] ) {
-            margin: 0;
             max-width: 540px;
-        }
+         }
     }
 
     &__title {
@@ -65,15 +46,16 @@
         .fontSize(30px, 36px);
         color: @black;
         text-align: center;
-        margin: 0 0 24px;
+        margin: 36px 0 24px;
 
         @media ( min-width: @sizes[ minSM ] ) {
-            margin: 0 0 36px;
+            margin: 48px 0 36px;
             .fontSize(60px, 72px);
         }
 
         @media ( min-width: @sizes[ minLG ] ) {
            text-align: left;
+           margin: 0 0 36px;
         }
     }
 
@@ -85,6 +67,18 @@
         @media ( min-width: @sizes[ minLG ] ) {
             text-align: left;
          }
+    }
+
+    .button--main {
+        margin: 24px auto 0;
+
+        @media ( min-width: @sizes[ minSM ] ) {
+            margin: 36px auto 0;
+        }
+
+        @media ( min-width: @sizes[ minLG ] ) {
+            margin: 36px 0 0;
+        }
     }
 
 }
