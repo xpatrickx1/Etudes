@@ -3,8 +3,8 @@
 <?php
     if (have_rows('selects_list')):
         while ( have_rows('selects_list')) : the_row();
-            $selects[$selectsCounter]['title'] = get_sub_field('selects_text');
-            $selects[$selectsCounter]['text'] = get_sub_field('selects_text');
+            $selects[$get_row_index()]['title'] = get_sub_field('selects_text');
+            $selects[$get_row_index()]['text'] = get_sub_field('selects_text');
             $selectsCounter++;
         endwhile;
     endif;

@@ -18,14 +18,16 @@
                     ?>
                     <?php if ($paged !== 1) { echo " - Page " . $paged;} ?>
                 </h1>
-                <?php if( get_field('page_description') ) : ?>
+                <?php if( category_description() ) : ?>
                     <p class="top-screen__description section-subtitle">
-                        <?= the_field('page_description') ?>
+                        <?= category_description() ?>
                     </p>
                 <?php endif; ?>
+
+                <?php get_template_part_params( 'includes/sections/page-blog/searchForm' )?>
             </div>
 
-            <div class="top-screen__right">
+            <div class="top-screen__right post">
                 <?php get_template_part('includes/sections/page-blog/recent-post')?>
             </div>
         </div>
