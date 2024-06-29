@@ -370,3 +370,8 @@ add_shortcode('random-posts', 'rand_posts');
 @ini_set( 'upload_max_size' , '256M' );
 @ini_set( 'post_max_size', '256M');
 @ini_set( 'max_execution_time', '300' );
+
+
+require_once ('functions/filterSearchExamples.php');
+require_once ('functions/search.php');
+require_once ('functions/searchAutoComplete.php');
